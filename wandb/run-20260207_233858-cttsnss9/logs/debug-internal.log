@@ -1,0 +1,15 @@
+{"time":"2026-02-07T23:38:58.942535003+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_233858-cttsnss9/logs/debug-core.log"}
+{"time":"2026-02-07T23:38:59.673307422+08:00","level":"INFO","msg":"created new stream","id":"cttsnss9"}
+{"time":"2026-02-07T23:38:59.673331247+08:00","level":"INFO","msg":"stream: started","id":"cttsnss9"}
+{"time":"2026-02-07T23:38:59.673370371+08:00","level":"INFO","msg":"handler: started","stream_id":"cttsnss9"}
+{"time":"2026-02-07T23:38:59.673365361+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"cttsnss9"}
+{"time":"2026-02-07T23:38:59.673400167+08:00","level":"INFO","msg":"sender: started","stream_id":"cttsnss9"}
+{"time":"2026-02-07T23:39:00.218683531+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T23:40:00.70651409+08:00","level":"INFO","msg":"stream: closing","id":"cttsnss9"}
+{"time":"2026-02-07T23:40:00.706536673+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T23:40:00.706595413+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T23:40:01.958499051+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T23:40:02.801665988+08:00","level":"INFO","msg":"handler: closed","stream_id":"cttsnss9"}
+{"time":"2026-02-07T23:40:02.801690975+08:00","level":"INFO","msg":"sender: closed","stream_id":"cttsnss9"}
+{"time":"2026-02-07T23:40:02.801689302+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cttsnss9"}
+{"time":"2026-02-07T23:40:02.801777829+08:00","level":"INFO","msg":"stream: closed","id":"cttsnss9"}

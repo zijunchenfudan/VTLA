@@ -1,0 +1,57 @@
+19:01:21.482 [I] Loaded norm stats from gs://openpi-assets/checkpoints/pi05_base/assets/trossen   (1233617:config.py:197)
+19:01:21.483 [I] data_config: DataConfig(repo_id='VTLA/test', asset_id='trossen', norm_stats={'actions': NormStats(mean=array([-4.93135245e-04,  1.27776004e-02,  2.02304833e-02,  1.23331591e-03,
+       -6.41778670e-03,  4.07096464e-04,  4.98429745e-01, -6.65830623e-04,
+        1.74387880e-02,  1.86176877e-02,  1.52963807e-03, -5.46285743e-03,
+        5.52790298e-04,  4.54312265e-01]), std=array([0.11247057, 0.17499542, 0.15172264, 0.12939453, 0.17761523,
+       0.16276594, 0.40857881, 0.1209663 , 0.19503564, 0.17451566,
+       0.15615851, 0.19515406, 0.20168738, 0.390746  ]), q01=array([-0.39002883, -0.59919751, -0.47576952, -0.43423963, -0.56675076,
+       -0.5542984 ,  0.        , -0.39533174, -0.64484382, -0.55134225,
+       -0.50822616, -0.61669207, -0.65532517,  0.        ]), q99=array([0.37967372, 0.57934165, 0.55156469, 0.43433714, 0.59048438,
+       0.54518175, 0.99979997, 0.41405535, 0.63123417, 0.61108637,
+       0.50291276, 0.63992548, 0.6665833 , 0.99979997])), 'state': NormStats(mean=array([ 0.07856607,  0.4520582 , -0.69770384,  0.09579104,  0.4286657 ,
+       -0.21089827,  0.49729466, -0.0543999 ,  0.2941359 , -0.56845224,
+       -0.08104772,  0.50191855,  0.21621925,  0.46373561]), std=array([0.3015573 , 0.58221459, 0.53911948, 0.3004154 , 0.49505186,
+       0.4686898 , 0.37784192, 0.31669065, 0.55915791, 0.52675462,
+       0.33406934, 0.49514234, 0.57826167, 0.35625583]), q01=array([-0.67040759, -0.61772704, -1.52246916, -0.63415253, -0.89280969,
+       -1.58147383,  0.        , -0.86363459, -0.68741089, -1.53267694,
+       -1.0348208 , -0.8360551 , -1.0564065 ,  0.        ]), q99=array([0.85865986, 1.5901643 , 0.71916759, 0.94921017, 1.50092041,
+       0.84878683, 0.98179996, 0.718961  , 1.58284497, 0.82213724,
+       0.75847888, 1.50713861, 1.87825537, 0.98019999]))}, repack_transforms=Group(inputs=[RepackTransform(structure={'images': {'camera_top': 'observation.images.camera_top'}, 'state': 'observation.state', 'tactile': 'observation.tactile', 'actions': 'action'})], outputs=()), data_transforms=Group(inputs=(TactileInputs(model_type=<ModelType.PI05: 'pi05'>), DeltaActions(mask=(True, True, True, True, True, True, True, False))), outputs=(AbsoluteActions(mask=(True, True, True, True, True, True, True, False)), TactileOutputs())), model_transforms=Group(inputs=[InjectDefaultPrompt(prompt='Pick and place two green tennis balls into the bowl'), ResizeImages(height=224, width=224), TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x7cbfbbf676d0>, discrete_state_input=True), PadStatesAndActions(model_action_dim=32)], outputs=()), use_quantile_norm=True, action_sequence_keys=('action',), prompt_from_task=False, rlds_data_dir=None, action_space=None, datasets=()) (1233617:data_loader.py:243)
+19:01:23.696 [I] local_batch_size: 16                                                             (1233617:data_loader.py:324)
+19:01:46.648 [I] Initialized data loader:
+[0].images['base_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (16,)@bool
+[0].image_masks['left_wrist_0_rgb']: (16,)@bool
+[0].image_masks['right_wrist_0_rgb']: (16,)@bool
+[0].state: (16, 32)@float32
+[0].tactile: (16, 5, 13)@float32
+[0].tokenized_prompt: (16, 200)@int32
+[0].tokenized_prompt_mask: (16, 200)@bool
+[1]: (16, 50, 32)@float32 (1233617:train.py:227)
+19:01:49.555 [I] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x7cc10c450910> (1233617:base_pytree_checkpoint_handler.py:334)
+19:01:49.570 [I] Restoring checkpoint from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (1233617:checkpointer.py:298)
+19:01:54.691 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 2.4 GiB/s (total bytes: 12.5 GiB) (time elapsed: 5 seconds) (per-host) (1233617:base_pytree_checkpoint_handler.py:114)
+19:01:54.691 [I] Finished restoring checkpoint in 5.12 seconds from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (1233617:checkpointer.py:309)
+Traceback (most recent call last):
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 280, in <module>
+    main(_config.cli())
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 236, in main
+    train_state, train_state_sharding = init_train_state(config, init_rng, mesh, resume=resuming)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jaxtyping/_decorator.py", line 559, in wrapped_fn
+    return wrapped_fn_impl(args, kwargs, bound, memos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jaxtyping/_decorator.py", line 483, in wrapped_fn_impl
+    out = fn(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 122, in init_train_state
+    partial_params = _load_weights_and_validate(config.weight_loader, train_state_shape.params.to_pure_dict())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 76, in _load_weights_and_validate
+    at.check_pytree_equality(expected=params_shape, got=loaded_params, check_shapes=True, check_dtypes=True)
+  File "/home/ps/VTLA/VTLA/src/openpi/shared/array_typing.py", line 70, in check_pytree_equality
+    raise ValueError(
+ValueError: PyTrees have different structure:
+   - at keypath '': expected <class 'dict'> with 6 children, got <class 'dict'> with 5 children, so the numbers of children do not match, with the symmetric difference of key sets: {'tactile_proj'}.

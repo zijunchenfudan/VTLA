@@ -1,0 +1,15 @@
+{"time":"2026-02-10T22:30:41.105878531+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260210_223041-ws9lpehz/logs/debug-core.log"}
+{"time":"2026-02-10T22:30:42.041456847+08:00","level":"INFO","msg":"created new stream","id":"ws9lpehz"}
+{"time":"2026-02-10T22:30:42.041481212+08:00","level":"INFO","msg":"stream: started","id":"ws9lpehz"}
+{"time":"2026-02-10T22:30:42.041495569+08:00","level":"INFO","msg":"handler: started","stream_id":"ws9lpehz"}
+{"time":"2026-02-10T22:30:42.041498495+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ws9lpehz"}
+{"time":"2026-02-10T22:30:42.041516929+08:00","level":"INFO","msg":"sender: started","stream_id":"ws9lpehz"}
+{"time":"2026-02-10T22:30:42.732757287+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-10T22:31:08.78882526+08:00","level":"INFO","msg":"stream: closing","id":"ws9lpehz"}
+{"time":"2026-02-10T22:31:08.788842342+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-10T22:31:08.788895161+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-10T22:31:10.076188861+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-10T22:31:10.990023135+08:00","level":"INFO","msg":"handler: closed","stream_id":"ws9lpehz"}
+{"time":"2026-02-10T22:31:10.990066166+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ws9lpehz"}
+{"time":"2026-02-10T22:31:10.990081545+08:00","level":"INFO","msg":"sender: closed","stream_id":"ws9lpehz"}
+{"time":"2026-02-10T22:31:10.990127331+08:00","level":"INFO","msg":"stream: closed","id":"ws9lpehz"}

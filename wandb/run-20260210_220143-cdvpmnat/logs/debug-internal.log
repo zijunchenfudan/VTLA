@@ -1,0 +1,17 @@
+{"time":"2026-02-10T22:01:43.682418504+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260210_220143-cdvpmnat/logs/debug-core.log"}
+{"time":"2026-02-10T22:01:44.522225258+08:00","level":"INFO","msg":"created new stream","id":"cdvpmnat"}
+{"time":"2026-02-10T22:01:44.522256106+08:00","level":"INFO","msg":"stream: started","id":"cdvpmnat"}
+{"time":"2026-02-10T22:01:44.522300119+08:00","level":"INFO","msg":"sender: started","stream_id":"cdvpmnat"}
+{"time":"2026-02-10T22:01:44.522337269+08:00","level":"INFO","msg":"handler: started","stream_id":"cdvpmnat"}
+{"time":"2026-02-10T22:01:44.522323713+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"cdvpmnat"}
+{"time":"2026-02-10T22:01:45.168675695+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-10T22:02:43.234011066+08:00","level":"INFO","msg":"stream: closing","id":"cdvpmnat"}
+{"time":"2026-02-10T22:02:43.234077241+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-10T22:02:43.234137865+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-10T22:02:54.524535839+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-10T22:02:55.220429154+08:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/cdvpmnat/file_stream"}
+{"time":"2026-02-10T22:02:55.220474109+08:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/zijunchenfudan-fudan-university/openpi/cdvpmnat/file_stream: {\"error\":\"run openpi/cdvpmnat not found while streaming file\"}"}
+{"time":"2026-02-10T22:02:55.226790478+08:00","level":"INFO","msg":"handler: closed","stream_id":"cdvpmnat"}
+{"time":"2026-02-10T22:02:55.226809584+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"cdvpmnat"}
+{"time":"2026-02-10T22:02:55.22682904+08:00","level":"INFO","msg":"sender: closed","stream_id":"cdvpmnat"}
+{"time":"2026-02-10T22:02:55.22686599+08:00","level":"INFO","msg":"stream: closed","id":"cdvpmnat"}

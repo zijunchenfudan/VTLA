@@ -1,0 +1,463 @@
+00:48:45.071 [I] Loaded norm stats from gs://openpi-assets/checkpoints/pi05_base/assets/trossen   (1716439:config.py:198)
+00:48:45.072 [I] data_config: DataConfig(repo_id='VTLA/Pick_and_Place_two_Tennis_Balls', asset_id='trossen', norm_stats={'actions': NormStats(mean=array([-4.93135245e-04,  1.27776004e-02,  2.02304833e-02,  1.23331591e-03,
+       -6.41778670e-03,  4.07096464e-04,  4.98429745e-01, -6.65830623e-04,
+        1.74387880e-02,  1.86176877e-02,  1.52963807e-03, -5.46285743e-03,
+        5.52790298e-04,  4.54312265e-01]), std=array([0.11247057, 0.17499542, 0.15172264, 0.12939453, 0.17761523,
+       0.16276594, 0.40857881, 0.1209663 , 0.19503564, 0.17451566,
+       0.15615851, 0.19515406, 0.20168738, 0.390746  ]), q01=array([-0.39002883, -0.59919751, -0.47576952, -0.43423963, -0.56675076,
+       -0.5542984 ,  0.        , -0.39533174, -0.64484382, -0.55134225,
+       -0.50822616, -0.61669207, -0.65532517,  0.        ]), q99=array([0.37967372, 0.57934165, 0.55156469, 0.43433714, 0.59048438,
+       0.54518175, 0.99979997, 0.41405535, 0.63123417, 0.61108637,
+       0.50291276, 0.63992548, 0.6665833 , 0.99979997])), 'state': NormStats(mean=array([ 0.07856607,  0.4520582 , -0.69770384,  0.09579104,  0.4286657 ,
+       -0.21089827,  0.49729466, -0.0543999 ,  0.2941359 , -0.56845224,
+       -0.08104772,  0.50191855,  0.21621925,  0.46373561]), std=array([0.3015573 , 0.58221459, 0.53911948, 0.3004154 , 0.49505186,
+       0.4686898 , 0.37784192, 0.31669065, 0.55915791, 0.52675462,
+       0.33406934, 0.49514234, 0.57826167, 0.35625583]), q01=array([-0.67040759, -0.61772704, -1.52246916, -0.63415253, -0.89280969,
+       -1.58147383,  0.        , -0.86363459, -0.68741089, -1.53267694,
+       -1.0348208 , -0.8360551 , -1.0564065 ,  0.        ]), q99=array([0.85865986, 1.5901643 , 0.71916759, 0.94921017, 1.50092041,
+       0.84878683, 0.98179996, 0.718961  , 1.58284497, 0.82213724,
+       0.75847888, 1.50713861, 1.87825537, 0.98019999]))}, repack_transforms=Group(inputs=[RepackTransform(structure={'images': {'camera_top': 'observation.images.camera_top'}, 'state': 'observation.state', 'tactile': 'observation.tactile', 'actions': 'action'})], outputs=()), data_transforms=Group(inputs=(TactileInputs(model_type=<ModelType.PI05: 'pi05'>), DeltaActions(mask=(True, True, True, True, True, True, True, False))), outputs=(AbsoluteActions(mask=(True, True, True, True, True, True, True, False)), TactileOutputs())), model_transforms=Group(inputs=[InjectDefaultPrompt(prompt='Pick and place two green tennis balls into the bowl'), ResizeImages(height=224, width=224), TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x73e9cb5516d0>, discrete_state_input=True, discrete_tactile_input=False), PadStatesAndActions(model_action_dim=32)], outputs=()), use_quantile_norm=True, action_sequence_keys=('action',), prompt_from_task=False, rlds_data_dir=None, action_space=None, datasets=()) (1716439:data_loader.py:243)
+Resolving data files: 100%|██████████████████████████████████████████████████████| 186/186 [00:00<00:00, 792020.86it/s]
+00:48:46.480 [I] local_batch_size: 16                                                             (1716439:data_loader.py:324)
+00:49:10.190 [I] Initialized data loader:
+[0].images['base_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (16,)@bool
+[0].image_masks['left_wrist_0_rgb']: (16,)@bool
+[0].image_masks['right_wrist_0_rgb']: (16,)@bool
+[0].state: (16, 32)@float32
+[0].tactile: (16, 5, 12)@float32
+[0].tokenized_prompt: (16, 200)@int32
+[0].tokenized_prompt_mask: (16, 200)@bool
+[1]: (16, 50, 32)@float32 (1716439:train.py:236)
+00:49:11.921 [I] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x73eb1bd3f110> (1716439:base_pytree_checkpoint_handler.py:334)
+00:49:11.939 [I] Restoring checkpoint from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (1716439:checkpointer.py:298)
+00:49:16.954 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 2.5 GiB/s (total bytes: 12.5 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+00:49:16.956 [I] Finished restoring checkpoint in 5.02 seconds from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (1716439:checkpointer.py:309)
+00:49:27.478 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@bfloat16
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['bias'].value: (3072,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['kernel'].value: (1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['lora_a'].value: (18, 8, 256, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['lora_b'].value: (18, 8, 16, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['lora_a'].value: (18, 8, 256, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['lora_b'].value: (18, 8, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['lora_a'].value: (18, 2, 1, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['lora_b'].value: (18, 2, 1, 16, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_a'].value: (18, 2, 1, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_b'].value: (18, 2, 1, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['lora_a'].value: (18, 8, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['lora_b'].value: (18, 8, 16, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_a'].value: (18, 8, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_b'].value: (18, 8, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum_lora_a'].value: (18, 2, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum_lora_b'].value: (18, 2, 16, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['linear_lora_a'].value: (18, 16384, 16)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear_lora_b'].value: (18, 16, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_a'].value: (18, 2, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_b'].value: (18, 2, 32, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_a'].value: (18, 4096, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_b'].value: (18, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['time_mlp_in']['bias'].value: (1024,)@float32
+['time_mlp_in']['kernel'].value: (1024, 1024)@float32
+['time_mlp_out']['bias'].value: (1024,)@float32
+['time_mlp_out']['kernel'].value: (1024, 1024)@float32 (1716439:train.py:247)
+                                                                                                                       
+Step 0: grad_norm=0.3118, loss=0.0792, param_norm=1803.8630
+Step 100: grad_norm=0.4777, loss=0.0775, param_norm=1803.8629
+Step 200: grad_norm=0.2839, loss=0.0491, param_norm=1803.8633
+Step 300: grad_norm=0.2065, loss=0.0406, param_norm=1803.8639
+Step 400: grad_norm=0.1949, loss=0.0343, param_norm=1803.8652
+Step 500: grad_norm=0.1749, loss=0.0306, param_norm=1803.8672
+Step 600: grad_norm=0.1559, loss=0.0275, param_norm=1803.8701
+Step 700: grad_norm=0.1488, loss=0.0263, param_norm=1803.8734
+Step 800: grad_norm=0.1409, loss=0.0251, param_norm=1803.8781
+Step 900: grad_norm=0.1186, loss=0.0231, param_norm=1803.8829
+Step 1000: grad_norm=0.1091, loss=0.0221, param_norm=1803.8887
+Step 1100: grad_norm=0.0991, loss=0.0215, param_norm=1803.8954
+Step 1200: grad_norm=0.1020, loss=0.0206, param_norm=1803.9025
+Step 1300: grad_norm=0.0977, loss=0.0194, param_norm=1803.9091
+Step 1400: grad_norm=0.0982, loss=0.0197, param_norm=1803.9163
+Step 1500: grad_norm=0.0877, loss=0.0193, param_norm=1803.9227
+Step 1600: grad_norm=0.0903, loss=0.0190, param_norm=1803.9298
+Step 1700: grad_norm=0.0855, loss=0.0179, param_norm=1803.9370
+Step 1800: grad_norm=0.0898, loss=0.0180, param_norm=1803.9436
+Step 1900: grad_norm=0.0851, loss=0.0174, param_norm=1803.9500
+Step 2000: grad_norm=0.0874, loss=0.0172, param_norm=1803.9570
+Step 2100: grad_norm=0.0860, loss=0.0168, param_norm=1803.9634
+Step 2200: grad_norm=0.0874, loss=0.0172, param_norm=1803.9696
+Step 2300: grad_norm=0.0850, loss=0.0165, param_norm=1803.9763
+Step 2400: grad_norm=0.0902, loss=0.0159, param_norm=1803.9830
+Step 2500: grad_norm=0.0844, loss=0.0162, param_norm=1803.9890
+Step 2600: grad_norm=0.0818, loss=0.0166, param_norm=1803.9952
+Step 2700: grad_norm=0.0843, loss=0.0162, param_norm=1804.0017
+Step 2800: grad_norm=0.0766, loss=0.0152, param_norm=1804.0083
+Step 2900: grad_norm=0.0764, loss=0.0153, param_norm=1804.0146
+Step 3000: grad_norm=0.0821, loss=0.0152, param_norm=1804.0206
+Step 3100: grad_norm=0.0771, loss=0.0147, param_norm=1804.0270
+Step 3200: grad_norm=0.0804, loss=0.0152, param_norm=1804.0332
+Step 3300: grad_norm=0.0727, loss=0.0141, param_norm=1804.0398
+Step 3400: grad_norm=0.0736, loss=0.0140, param_norm=1804.0459
+Step 3500: grad_norm=0.0768, loss=0.0145, param_norm=1804.0519
+Step 3600: grad_norm=0.0897, loss=0.0143, param_norm=1804.0588
+Step 3700: grad_norm=0.0751, loss=0.0143, param_norm=1804.0649
+Step 3800: grad_norm=0.0760, loss=0.0139, param_norm=1804.0720
+Step 3900: grad_norm=0.0743, loss=0.0138, param_norm=1804.0784
+Step 4000: grad_norm=0.0731, loss=0.0134, param_norm=1804.0840
+Step 4100: grad_norm=0.0883, loss=0.0137, param_norm=1804.0903
+Step 4200: grad_norm=0.0734, loss=0.0135, param_norm=1804.0959
+Step 4300: grad_norm=0.0746, loss=0.0128, param_norm=1804.1022
+Step 4400: grad_norm=0.0767, loss=0.0135, param_norm=1804.1085
+Step 4500: grad_norm=0.0758, loss=0.0130, param_norm=1804.1146
+Step 4600: grad_norm=0.0760, loss=0.0131, param_norm=1804.1206
+Step 4700: grad_norm=0.0729, loss=0.0126, param_norm=1804.1262
+Step 4800: grad_norm=0.0753, loss=0.0129, param_norm=1804.1318
+Step 4900: grad_norm=0.0736, loss=0.0129, param_norm=1804.1378
+Step 5000: grad_norm=0.0763, loss=0.0131, param_norm=1804.1437
+03:02:49.893 [I] [process=0] Saving checkpoint at step 5000                                       (1716439:checkpoint_manager.py:1408)
+03:02:49.893 [I] [process=0] Started async saving checkpoint to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000. (1716439:async_checkpointer.py:439)
+03:02:49.900 [I] Using ThreadSafeKeyValueSignalingClient                                          (1716439:signaling_client.py:332)
+03:02:49.901 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0 (1716439:atomicity.py:144)
+03:02:49.910 [I] Wrote Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1770663769909243736, 'commit_timestamp_nsecs': None, 'custom_metadata': {}}, json={"item_handlers": null, "metrics": {}, "performance_metrics": {}, "init_timestamp_nsecs": 1770663769909243736, "commit_timestamp_nsecs": null, "custom_metadata": {}} to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/_CHECKPOINT_METADATA (1716439:checkpoint.py:186)
+03:02:49.911 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/assets.orbax-checkpoint-tmp-1 (1716439:atomicity.py:144)
+03:02:49.911 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2 (1716439:atomicity.py:144)
+03:02:49.911 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/train_state.orbax-checkpoint-tmp-3 (1716439:atomicity.py:144)
+03:02:49.920 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+03:02:52.095 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+03:02:52.105 [I] Array name: 'params.PaliGemma.llm.layers.mlp.gating_einsum.value', global shape: (18, 2, 2048, 16384), write shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2, 2048, 8192) (1716439:tensorstore_utils.py:408)
+03:02:52.117 [I] [process=0][thread=array_type_handler] Wrote 71 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+03:02:59.481 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 770.6 MiB/s (total bytes: 7.2 GiB) (time elapsed: 9 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+03:02:59.484 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 372.0 MiB/s (total bytes: 3.5 GiB) (time elapsed: 9 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+03:02:59.489 [I] [process=0][thread=async_save] Background save thread started.                   (1716439:async_checkpointer.py:77)
+03:02:59.490 [I] Finished blocking save in 9.60 seconds. Continuing to save asynchronously to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000. (1716439:async_checkpointer.py:548)
+03:02:59.491 [I] [process=0][thread=MainThread][step=5000] Starting CheckpointManager Save Finalize thread=save_finalize (1716439:checkpoint_manager.py:1453)
+03:02:59.491 [I] [process=0][thread=save_finalize] Waiting for background save thread=async_save. (1716439:async_checkpointer.py:258)
+03:02:59.491 [I] {'step': 5000, 'event_type': 'save', 'directory': '/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile', 'reached_preemption': False, 'preemption_received_at': None, 'synchronous': False, 'wait_for_prev_start_time': 1770663769.8931441, 'wait_for_prev_duration_secs': 0.00012969970703125, 'checkpointer_blocking_start_time': 1770663769.8935022, 'checkpointer_blocking_duration_secs': 9.597938299179077, 'get_old_steps_start_time': 1770663779.4914558, 'get_old_steps_duration_secs': 2.6226043701171875e-06, 'checkpoint_manager_blocking_start_time': 1770663769.8930702, 'checkpoint_manager_blocking_duration_secs': 9.598733186721802} (1716439:standard_logger.py:34)
+ 25%|██████████████████                                                      | 5001/20000 [2:13:32<18:38:25,  4.47s/it]03:02:59.496 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 769.4 MiB/s (total bytes: 7.2 GiB) (time elapsed: 9 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+03:02:59.502 [I] [process=0][thread=array_type_handler] Wrote 105 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/train_state.orbax-checkpoint-tmp-3/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+03:03:00.861 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 325.3 MiB/s (total bytes: 3.5 GiB) (time elapsed: 10 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+03:03:00.861 [I] [process=0][thread=async_save] 5 Handler Commit operations completed.            (1716439:async_checkpointer.py:87)
+03:03:00.861 [I] Read Metadata={'item_handlers': None, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1770663769909243736, 'commit_timestamp_nsecs': None, 'custom_metadata': {}} from /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/_CHECKPOINT_METADATA (1716439:checkpoint.py:226)
+03:03:00.861 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/assets.orbax-checkpoint-tmp-1 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/assets (1716439:atomicity.py:289)
+03:03:00.862 [I] Updated Metadata={'item_handlers': {'assets': 'openpi.training.checkpoints.CallbackHandler', 'params': 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler', 'train_state': 'orbax.checkpoint._src.handlers.pytree_checkpoint_handler.PyTreeCheckpointHandler'}, 'metrics': {}, 'performance_metrics': {}, 'init_timestamp_nsecs': 1770663769909243736, 'commit_timestamp_nsecs': None, 'custom_metadata': {}} to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/_CHECKPOINT_METADATA (1716439:checkpoint.py:245)
+03:03:00.863 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+03:03:00.873 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/train_state.orbax-checkpoint-tmp-3 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/train_state (1716439:atomicity.py:289)
+03:03:00.874 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+03:03:00.883 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/params.orbax-checkpoint-tmp-2 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0/params (1716439:atomicity.py:289)
+03:03:00.883 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000.orbax-checkpoint-tmp-0 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000 (1716439:atomicity.py:289)
+03:03:00.883 [I] [process=0][thread=async_save] Finished saving checkpoint (finalized tmp dir) to `/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000`. (1716439:atomicity.py:573)
+03:03:00.883 [I] Finished asynchronous save (blocking + background) in 10.99 seconds to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/5000 (1716439:async_checkpointer.py:412)
+03:03:00.883 [I] [process=0][thread=async_save] Background save thread done.                      (1716439:async_checkpointer.py:143)
+03:03:00.883 [I] [process=0][thread=save_finalize] Done with waiting for background save thread=async_save. (1716439:async_checkpointer.py:266)
+03:03:00.883 [I] [process=0][thread=save_finalize] No errors found in background save thread=async_save. (1716439:async_checkpointer.py:276)
+03:03:00.883 [I] [process=0][thread=save_finalize][step=5000] CheckpointManager Save Finalize is syncing with other hosts... (1716439:checkpoint_manager.py:2095)
+03:03:00.883 [I] [process=0][thread=save_finalize][step=5000] CheckpointManager Save Finalize is done on all hosts. (1716439:checkpoint_manager.py:2110)
+                                                                                                                       
+Step 5100: grad_norm=0.0767, loss=0.0125, param_norm=1804.1493
+Step 5200: grad_norm=0.0731, loss=0.0126, param_norm=1804.1556
+Step 5300: grad_norm=0.0712, loss=0.0122, param_norm=1804.1619
+Step 5400: grad_norm=0.0725, loss=0.0126, param_norm=1804.1677
+Step 5500: grad_norm=0.0695, loss=0.0117, param_norm=1804.1733
+Step 5600: grad_norm=0.0734, loss=0.0116, param_norm=1804.1793
+Step 5700: grad_norm=0.0752, loss=0.0117, param_norm=1804.1849
+Step 5800: grad_norm=0.0794, loss=0.0116, param_norm=1804.1903
+Step 5900: grad_norm=0.0794, loss=0.0117, param_norm=1804.1962
+Step 6000: grad_norm=0.0710, loss=0.0114, param_norm=1804.2017
+Step 6100: grad_norm=0.0776, loss=0.0120, param_norm=1804.2072
+Step 6200: grad_norm=0.0762, loss=0.0119, param_norm=1804.2124
+Step 6300: grad_norm=0.0707, loss=0.0110, param_norm=1804.2188
+Step 6400: grad_norm=0.0754, loss=0.0112, param_norm=1804.2244
+Step 6500: grad_norm=0.0712, loss=0.0110, param_norm=1804.2296
+Step 6600: grad_norm=0.0732, loss=0.0106, param_norm=1804.2351
+Step 6700: grad_norm=0.0713, loss=0.0109, param_norm=1804.2406
+Step 6800: grad_norm=0.0754, loss=0.0111, param_norm=1804.2456
+Step 6900: grad_norm=0.0697, loss=0.0110, param_norm=1804.2506
+Step 7000: grad_norm=0.0716, loss=0.0110, param_norm=1804.2561
+Step 7100: grad_norm=0.0692, loss=0.0107, param_norm=1804.2612
+Step 7200: grad_norm=0.0754, loss=0.0109, param_norm=1804.2662
+Step 7300: grad_norm=0.0734, loss=0.0105, param_norm=1804.2710
+Step 7400: grad_norm=0.0704, loss=0.0107, param_norm=1804.2765
+Step 7500: grad_norm=0.0705, loss=0.0107, param_norm=1804.2819
+Step 7600: grad_norm=0.0691, loss=0.0101, param_norm=1804.2870
+Step 7700: grad_norm=0.0746, loss=0.0105, param_norm=1804.2925
+Step 7800: grad_norm=0.0677, loss=0.0103, param_norm=1804.2971
+Step 7900: grad_norm=0.0694, loss=0.0100, param_norm=1804.3025
+Step 8000: grad_norm=0.0720, loss=0.0099, param_norm=1804.3075
+Step 8100: grad_norm=0.0651, loss=0.0097, param_norm=1804.3121
+Step 8200: grad_norm=0.0676, loss=0.0096, param_norm=1804.3169
+Step 8300: grad_norm=0.0746, loss=0.0099, param_norm=1804.3215
+Step 8400: grad_norm=0.0712, loss=0.0096, param_norm=1804.3268
+Step 8500: grad_norm=0.0716, loss=0.0101, param_norm=1804.3312
+Step 8600: grad_norm=0.0702, loss=0.0098, param_norm=1804.3359
+Step 8700: grad_norm=0.0710, loss=0.0099, param_norm=1804.3407
+Step 8800: grad_norm=0.0675, loss=0.0091, param_norm=1804.3452
+Step 8900: grad_norm=0.0749, loss=0.0095, param_norm=1804.3500
+Step 9000: grad_norm=0.0679, loss=0.0095, param_norm=1804.3544
+Step 9100: grad_norm=0.0704, loss=0.0096, param_norm=1804.3590
+Step 9200: grad_norm=0.0675, loss=0.0091, param_norm=1804.3635
+Step 9300: grad_norm=0.0687, loss=0.0091, param_norm=1804.3678
+Step 9400: grad_norm=0.0692, loss=0.0092, param_norm=1804.3722
+Step 9500: grad_norm=0.0646, loss=0.0089, param_norm=1804.3765
+Step 9600: grad_norm=0.0677, loss=0.0091, param_norm=1804.3809
+Step 9700: grad_norm=0.0713, loss=0.0089, param_norm=1804.3851
+Step 9800: grad_norm=0.0677, loss=0.0089, param_norm=1804.3895
+Step 9900: grad_norm=0.0662, loss=0.0090, param_norm=1804.3937
+Step 10000: grad_norm=0.0682, loss=0.0088, param_norm=1804.3979
+05:15:35.179 [I] [process=0] Saving checkpoint at step 10000                                      (1716439:checkpoint_manager.py:1408)
+05:15:35.179 [I] [process=0] Started async saving checkpoint to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000. (1716439:async_checkpointer.py:439)
+05:15:35.185 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4 (1716439:atomicity.py:144)
+05:15:35.189 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/assets.orbax-checkpoint-tmp-5 (1716439:atomicity.py:144)
+05:15:35.189 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/params.orbax-checkpoint-tmp-6 (1716439:atomicity.py:144)
+05:15:35.190 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/train_state.orbax-checkpoint-tmp-7 (1716439:atomicity.py:144)
+05:15:35.194 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+05:15:36.741 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+05:15:36.743 [I] Array name: 'params.PaliGemma.llm.layers.mlp.gating_einsum.value', global shape: (18, 2, 2048, 16384), write shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2, 2048, 8192) (1716439:tensorstore_utils.py:408)
+05:15:36.756 [I] [process=0][thread=array_type_handler] Wrote 71 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/params.orbax-checkpoint-tmp-6/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+05:15:41.003 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 1.2 GiB/s (total bytes: 7.2 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+05:15:41.004 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 612.1 MiB/s (total bytes: 3.5 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+05:15:41.011 [I] [process=0][thread=async_save] Background save thread started.                   (1716439:async_checkpointer.py:77)
+05:15:41.012 [I] Finished blocking save in 5.83 seconds. Continuing to save asynchronously to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000. (1716439:async_checkpointer.py:548)
+05:15:41.013 [I] Preserving Checkpoint[step=5000 | time=2026-02-09 19:02:59.491446+00:00]: (Reason: on keep_period=5000). (1716439:checkpoint_manager.py:1949)
+05:15:41.013 [I] [process=0][thread=MainThread][step=10000] Starting CheckpointManager Save Finalize thread=save_finalize (1716439:checkpoint_manager.py:1453)
+05:15:41.015 [I] [process=0][thread=save_finalize] Waiting for background save thread=async_save. (1716439:async_checkpointer.py:258)
+05:15:41.016 [I] {'step': 10000, 'event_type': 'save', 'directory': '/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile', 'reached_preemption': False, 'preemption_received_at': None, 'synchronous': False, 'wait_for_prev_start_time': 1770671735.17928, 'wait_for_prev_duration_secs': 0.00013327598571777344, 'checkpointer_blocking_start_time': 1770671735.1796327, 'checkpointer_blocking_duration_secs': 5.833680629730225, 'get_old_steps_start_time': 1770671741.0133283, 'get_old_steps_duration_secs': 0.0003273487091064453, 'checkpoint_manager_blocking_start_time': 1770671735.1791875, 'checkpoint_manager_blocking_duration_secs': 5.83681321144104} (1716439:standard_logger.py:34)
+ 50%|████████████████████████████████████                                    | 10001/20000 [4:26:13<9:17:44,  3.35s/it]05:15:41.018 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 1.2 GiB/s (total bytes: 7.2 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+05:15:41.021 [I] [process=0][thread=array_type_handler] Wrote 105 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/train_state.orbax-checkpoint-tmp-7/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+05:15:42.282 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 501.9 MiB/s (total bytes: 3.5 GiB) (time elapsed: 7 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+05:15:42.283 [I] [process=0][thread=async_save] 5 Handler Commit operations completed.            (1716439:async_checkpointer.py:87)
+05:15:42.283 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/assets.orbax-checkpoint-tmp-5 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/assets (1716439:atomicity.py:289)
+05:15:42.285 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+05:15:42.296 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/train_state.orbax-checkpoint-tmp-7 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/train_state (1716439:atomicity.py:289)
+05:15:42.298 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+05:15:42.306 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/params.orbax-checkpoint-tmp-6 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4/params (1716439:atomicity.py:289)
+05:15:42.306 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000.orbax-checkpoint-tmp-4 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000 (1716439:atomicity.py:289)
+05:15:42.307 [I] [process=0][thread=async_save] Finished saving checkpoint (finalized tmp dir) to `/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000`. (1716439:atomicity.py:573)
+05:15:42.307 [I] Finished asynchronous save (blocking + background) in 7.13 seconds to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/10000 (1716439:async_checkpointer.py:412)
+05:15:42.307 [I] [process=0][thread=async_save] Background save thread done.                      (1716439:async_checkpointer.py:143)
+05:15:42.307 [I] [process=0][thread=save_finalize] Done with waiting for background save thread=async_save. (1716439:async_checkpointer.py:266)
+05:15:42.307 [I] [process=0][thread=save_finalize] No errors found in background save thread=async_save. (1716439:async_checkpointer.py:276)
+05:15:42.307 [I] [process=0][thread=save_finalize][step=10000] CheckpointManager Save Finalize is syncing with other hosts... (1716439:checkpoint_manager.py:2095)
+05:15:42.307 [I] [process=0][thread=save_finalize][step=10000] CheckpointManager Save Finalize is done on all hosts. (1716439:checkpoint_manager.py:2110)
+                                                                                                                       
+Step 10100: grad_norm=0.0639, loss=0.0086, param_norm=1804.4023
+Step 10200: grad_norm=0.0658, loss=0.0086, param_norm=1804.4065
+Step 10300: grad_norm=0.0692, loss=0.0087, param_norm=1804.4109
+Step 10400: grad_norm=0.0687, loss=0.0087, param_norm=1804.4149
+Step 10500: grad_norm=0.0660, loss=0.0084, param_norm=1804.4187
+Step 10600: grad_norm=0.0679, loss=0.0085, param_norm=1804.4225
+Step 10700: grad_norm=0.0689, loss=0.0090, param_norm=1804.4265
+Step 10800: grad_norm=0.0656, loss=0.0086, param_norm=1804.4305
+Step 10900: grad_norm=0.0639, loss=0.0078, param_norm=1804.4349
+Step 11000: grad_norm=0.0631, loss=0.0077, param_norm=1804.4387
+Step 11100: grad_norm=0.0640, loss=0.0082, param_norm=1804.4425
+Step 11200: grad_norm=0.0660, loss=0.0083, param_norm=1804.4465
+Step 11300: grad_norm=0.0640, loss=0.0078, param_norm=1804.4506
+Step 11400: grad_norm=0.0671, loss=0.0084, param_norm=1804.4540
+Step 11500: grad_norm=0.0619, loss=0.0076, param_norm=1804.4575
+Step 11600: grad_norm=0.0674, loss=0.0080, param_norm=1804.4612
+Step 11700: grad_norm=0.0660, loss=0.0079, param_norm=1804.4646
+Step 11800: grad_norm=0.0677, loss=0.0079, param_norm=1804.4681
+Step 11900: grad_norm=0.0687, loss=0.0080, param_norm=1804.4717
+Step 12000: grad_norm=0.0638, loss=0.0081, param_norm=1804.4750
+Step 12100: grad_norm=0.0652, loss=0.0078, param_norm=1804.4788
+Step 12200: grad_norm=0.0637, loss=0.0079, param_norm=1804.4822
+Step 12300: grad_norm=0.0599, loss=0.0074, param_norm=1804.4856
+Step 12400: grad_norm=0.0784, loss=0.0074, param_norm=1804.4884
+Step 12500: grad_norm=0.0592, loss=0.0071, param_norm=1804.4916
+Step 12600: grad_norm=0.0656, loss=0.0077, param_norm=1804.4946
+Step 12700: grad_norm=0.0709, loss=0.0074, param_norm=1804.4978
+Step 12800: grad_norm=0.0635, loss=0.0075, param_norm=1804.5006
+Step 12900: grad_norm=0.0606, loss=0.0072, param_norm=1804.5037
+Step 13000: grad_norm=0.0619, loss=0.0075, param_norm=1804.5068
+Step 13100: grad_norm=0.0634, loss=0.0072, param_norm=1804.5096
+Step 13200: grad_norm=0.0641, loss=0.0073, param_norm=1804.5126
+Step 13300: grad_norm=0.0622, loss=0.0071, param_norm=1804.5153
+Step 13400: grad_norm=0.0621, loss=0.0069, param_norm=1804.5178
+Step 13500: grad_norm=0.0605, loss=0.0071, param_norm=1804.5206
+Step 13600: grad_norm=0.0616, loss=0.0075, param_norm=1804.5237
+Step 13700: grad_norm=0.0624, loss=0.0073, param_norm=1804.5267
+Step 13800: grad_norm=0.0663, loss=0.0073, param_norm=1804.5293
+Step 13900: grad_norm=0.0615, loss=0.0071, param_norm=1804.5319
+Step 14000: grad_norm=0.0603, loss=0.0068, param_norm=1804.5345
+Step 14100: grad_norm=0.0623, loss=0.0070, param_norm=1804.5371
+Step 14200: grad_norm=0.0611, loss=0.0069, param_norm=1804.5399
+Step 14300: grad_norm=0.0618, loss=0.0071, param_norm=1804.5425
+Step 14400: grad_norm=0.0597, loss=0.0067, param_norm=1804.5449
+Step 14500: grad_norm=0.0589, loss=0.0067, param_norm=1804.5471
+Step 14600: grad_norm=0.0667, loss=0.0071, param_norm=1804.5497
+Step 14700: grad_norm=0.0606, loss=0.0071, param_norm=1804.5525
+Step 14800: grad_norm=0.0610, loss=0.0065, param_norm=1804.5548
+Step 14900: grad_norm=0.0639, loss=0.0072, param_norm=1804.5570
+Step 15000: grad_norm=0.0601, loss=0.0068, param_norm=1804.5592
+07:28:16.839 [I] [process=0] Saving checkpoint at step 15000                                      (1716439:checkpoint_manager.py:1408)
+07:28:16.839 [I] [process=0] Started async saving checkpoint to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000. (1716439:async_checkpointer.py:439)
+07:28:16.844 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8 (1716439:atomicity.py:144)
+07:28:16.848 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/assets.orbax-checkpoint-tmp-9 (1716439:atomicity.py:144)
+07:28:16.849 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/params.orbax-checkpoint-tmp-10 (1716439:atomicity.py:144)
+07:28:16.850 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/train_state.orbax-checkpoint-tmp-11 (1716439:atomicity.py:144)
+07:28:16.852 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+07:28:18.058 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+07:28:18.060 [I] Array name: 'params.PaliGemma.llm.layers.mlp.gating_einsum.value', global shape: (18, 2, 2048, 16384), write shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2, 2048, 8192) (1716439:tensorstore_utils.py:408)
+07:28:18.073 [I] [process=0][thread=array_type_handler] Wrote 71 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/params.orbax-checkpoint-tmp-10/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+07:28:22.663 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 1.2 GiB/s (total bytes: 7.2 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+07:28:22.667 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 611.8 MiB/s (total bytes: 3.5 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+07:28:22.671 [I] [process=0][thread=async_save] Background save thread started.                   (1716439:async_checkpointer.py:77)
+07:28:22.671 [I] Finished blocking save in 5.83 seconds. Continuing to save asynchronously to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000. (1716439:async_checkpointer.py:548)
+07:28:22.675 [I] Preserving Checkpoint[step=5000 | time=2026-02-09 19:02:59.491446+00:00]: (Reason: on keep_period=5000). (1716439:checkpoint_manager.py:1949)
+07:28:22.675 [I] Preserving Checkpoint[step=10000 | time=2026-02-09 21:15:41.013319+00:00]: (Reason: on keep_period=5000). (1716439:checkpoint_manager.py:1949)
+07:28:22.675 [I] [process=0][thread=MainThread][step=15000] Starting CheckpointManager Save Finalize thread=save_finalize (1716439:checkpoint_manager.py:1453)
+07:28:22.676 [I] [process=0][thread=save_finalize] Waiting for background save thread=async_save. (1716439:async_checkpointer.py:258)
+07:28:22.676 [I] {'step': 15000, 'event_type': 'save', 'directory': '/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile', 'reached_preemption': False, 'preemption_received_at': None, 'synchronous': False, 'wait_for_prev_start_time': 1770679696.83917, 'wait_for_prev_duration_secs': 0.0001590251922607422, 'checkpointer_blocking_start_time': 1770679696.8395295, 'checkpointer_blocking_duration_secs': 5.8356287479400635, 'get_old_steps_start_time': 1770679702.6751757, 'get_old_steps_duration_secs': 0.0006308555603027344, 'checkpoint_manager_blocking_start_time': 1770679696.8390782, 'checkpoint_manager_blocking_duration_secs': 5.837273120880127} (1716439:standard_logger.py:34)
+ 75%|██████████████████████████████████████████████████████                  | 15001/20000 [6:38:55<4:38:50,  3.35s/it]07:28:22.679 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 1.2 GiB/s (total bytes: 7.2 GiB) (time elapsed: 5 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+07:28:22.682 [I] [process=0][thread=array_type_handler] Wrote 105 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/train_state.orbax-checkpoint-tmp-11/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+07:28:23.964 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 500.4 MiB/s (total bytes: 3.5 GiB) (time elapsed: 7 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+07:28:23.964 [I] [process=0][thread=async_save] 5 Handler Commit operations completed.            (1716439:async_checkpointer.py:87)
+07:28:23.965 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/assets.orbax-checkpoint-tmp-9 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/assets (1716439:atomicity.py:289)
+07:28:23.966 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+07:28:23.976 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/train_state.orbax-checkpoint-tmp-11 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/train_state (1716439:atomicity.py:289)
+07:28:23.977 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+07:28:23.985 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/params.orbax-checkpoint-tmp-10 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8/params (1716439:atomicity.py:289)
+07:28:23.985 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000.orbax-checkpoint-tmp-8 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000 (1716439:atomicity.py:289)
+07:28:23.986 [I] [process=0][thread=async_save] Finished saving checkpoint (finalized tmp dir) to `/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000`. (1716439:atomicity.py:573)
+07:28:23.986 [I] Finished asynchronous save (blocking + background) in 7.15 seconds to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/15000 (1716439:async_checkpointer.py:412)
+07:28:23.986 [I] [process=0][thread=async_save] Background save thread done.                      (1716439:async_checkpointer.py:143)
+07:28:23.986 [I] [process=0][thread=save_finalize] Done with waiting for background save thread=async_save. (1716439:async_checkpointer.py:266)
+07:28:23.986 [I] [process=0][thread=save_finalize] No errors found in background save thread=async_save. (1716439:async_checkpointer.py:276)
+07:28:23.986 [I] [process=0][thread=save_finalize][step=15000] CheckpointManager Save Finalize is syncing with other hosts... (1716439:checkpoint_manager.py:2095)
+07:28:23.986 [I] [process=0][thread=save_finalize][step=15000] CheckpointManager Save Finalize is done on all hosts. (1716439:checkpoint_manager.py:2110)
+                                                                                                                       
+Step 15100: grad_norm=0.0626, loss=0.0069, param_norm=1804.5615
+Step 15200: grad_norm=0.0633, loss=0.0065, param_norm=1804.5637
+Step 15300: grad_norm=0.0586, loss=0.0065, param_norm=1804.5659
+Step 15400: grad_norm=0.0622, loss=0.0068, param_norm=1804.5677
+Step 15500: grad_norm=0.0591, loss=0.0064, param_norm=1804.5699
+Step 15600: grad_norm=0.0601, loss=0.0068, param_norm=1804.5718
+Step 15700: grad_norm=0.0590, loss=0.0067, param_norm=1804.5739
+Step 15800: grad_norm=0.0594, loss=0.0065, param_norm=1804.5759
+Step 15900: grad_norm=0.0600, loss=0.0063, param_norm=1804.5781
+Step 16000: grad_norm=0.0580, loss=0.0060, param_norm=1804.5800
+Step 16100: grad_norm=0.0606, loss=0.0063, param_norm=1804.5820
+Step 16200: grad_norm=0.0615, loss=0.0064, param_norm=1804.5840
+Step 16300: grad_norm=0.0582, loss=0.0062, param_norm=1804.5856
+Step 16400: grad_norm=0.0581, loss=0.0060, param_norm=1804.5874
+Step 16500: grad_norm=0.0597, loss=0.0060, param_norm=1804.5895
+Step 16600: grad_norm=0.0626, loss=0.0061, param_norm=1804.5912
+Step 16700: grad_norm=0.0614, loss=0.0062, param_norm=1804.5931
+Step 16800: grad_norm=0.0608, loss=0.0061, param_norm=1804.5944
+Step 16900: grad_norm=0.0597, loss=0.0061, param_norm=1804.5962
+Step 17000: grad_norm=0.0612, loss=0.0060, param_norm=1804.5979
+Step 17100: grad_norm=0.0575, loss=0.0058, param_norm=1804.5996
+Step 17200: grad_norm=0.0598, loss=0.0056, param_norm=1804.6012
+Step 17300: grad_norm=0.0595, loss=0.0062, param_norm=1804.6028
+Step 17400: grad_norm=0.0575, loss=0.0056, param_norm=1804.6044
+Step 17500: grad_norm=0.0582, loss=0.0057, param_norm=1804.6057
+Step 17600: grad_norm=0.0580, loss=0.0059, param_norm=1804.6074
+Step 17700: grad_norm=0.0561, loss=0.0053, param_norm=1804.6088
+Step 17800: grad_norm=0.0586, loss=0.0058, param_norm=1804.6100
+Step 17900: grad_norm=0.0569, loss=0.0057, param_norm=1804.6112
+Step 18000: grad_norm=0.0589, loss=0.0058, param_norm=1804.6129
+Step 18100: grad_norm=0.0570, loss=0.0058, param_norm=1804.6141
+Step 18200: grad_norm=0.0569, loss=0.0055, param_norm=1804.6156
+Step 18300: grad_norm=0.0594, loss=0.0058, param_norm=1804.6166
+Step 18400: grad_norm=0.0582, loss=0.0060, param_norm=1804.6180
+Step 18500: grad_norm=0.0617, loss=0.0062, param_norm=1804.6190
+Step 18600: grad_norm=0.0557, loss=0.0055, param_norm=1804.6207
+Step 18700: grad_norm=0.0544, loss=0.0055, param_norm=1804.6219
+Step 18800: grad_norm=0.0585, loss=0.0053, param_norm=1804.6234
+Step 18900: grad_norm=0.0575, loss=0.0054, param_norm=1804.6246
+Step 19000: grad_norm=0.0560, loss=0.0054, param_norm=1804.6256
+Step 19100: grad_norm=0.0575, loss=0.0057, param_norm=1804.6265
+Step 19200: grad_norm=0.0554, loss=0.0052, param_norm=1804.6278
+Step 19300: grad_norm=0.0553, loss=0.0054, param_norm=1804.6289
+Step 19400: grad_norm=0.0544, loss=0.0053, param_norm=1804.6298
+Step 19500: grad_norm=0.0561, loss=0.0056, param_norm=1804.6309
+Step 19600: grad_norm=0.0579, loss=0.0056, param_norm=1804.6318
+Step 19700: grad_norm=0.0571, loss=0.0056, param_norm=1804.6328
+Step 19800: grad_norm=0.0545, loss=0.0052, param_norm=1804.6340
+Step 19900: grad_norm=0.0549, loss=0.0052, param_norm=1804.6350
+09:40:57.786 [I] [process=0] Saving checkpoint at step 19999                                      (1716439:checkpoint_manager.py:1408)
+09:40:57.787 [I] [process=0] Started async saving checkpoint to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999. (1716439:async_checkpointer.py:439)
+09:40:57.792 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12 (1716439:atomicity.py:144)
+09:40:57.795 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/assets.orbax-checkpoint-tmp-13 (1716439:atomicity.py:144)
+09:40:57.795 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/params.orbax-checkpoint-tmp-14 (1716439:atomicity.py:144)
+09:40:57.797 [I] Creating tmp directory /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/train_state.orbax-checkpoint-tmp-15 (1716439:atomicity.py:144)
+09:40:57.801 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+09:40:58.859 [I] Transferring arrays to host memory with options: use_replica_parallel=True, enable_pinned_host_transfer=False (1716439:replica_slices.py:341)
+09:40:58.864 [I] Array name: 'params.PaliGemma.llm.layers.mlp.gating_einsum.value', global shape: (18, 2, 2048, 16384), write shape: (18, 2, 2048, 16384), chosen chunk shape: (18, 2, 2048, 8192) (1716439:tensorstore_utils.py:408)
+09:40:58.872 [I] [process=0][thread=array_type_handler] Wrote 71 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/params.orbax-checkpoint-tmp-14/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+09:41:04.075 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 1.1 GiB/s (total bytes: 7.2 GiB) (time elapsed: 6 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+09:41:04.076 [I] [process=0] /jax/checkpoint/write/blocking_bytes_per_sec: 566.8 MiB/s (total bytes: 3.5 GiB) (time elapsed: 6 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+09:41:04.083 [I] [process=0][thread=async_save] Background save thread started.                   (1716439:async_checkpointer.py:77)
+09:41:04.084 [I] Finished blocking save in 6.30 seconds. Continuing to save asynchronously to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999. (1716439:async_checkpointer.py:548)
+09:41:04.086 [I] Preserving Checkpoint[step=5000 | time=2026-02-09 19:02:59.491446+00:00]: (Reason: on keep_period=5000). (1716439:checkpoint_manager.py:1949)
+09:41:04.087 [I] Preserving Checkpoint[step=10000 | time=2026-02-09 21:15:41.013319+00:00]: (Reason: on keep_period=5000). (1716439:checkpoint_manager.py:1949)
+09:41:04.087 [I] Preserving Checkpoint[step=15000 | time=2026-02-09 23:28:22.675162+00:00]: (Reason: on keep_period=5000). (1716439:checkpoint_manager.py:1949)
+09:41:04.087 [I] [process=0][thread=MainThread][step=19999] Starting CheckpointManager Save Finalize thread=save_finalize (1716439:checkpoint_manager.py:1453)
+09:41:04.087 [I] [process=0][thread=save_finalize] Waiting for background save thread=async_save. (1716439:async_checkpointer.py:258)
+09:41:04.088 [I] {'step': 19999, 'event_type': 'save', 'directory': '/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile', 'reached_preemption': False, 'preemption_received_at': None, 'synchronous': False, 'wait_for_prev_start_time': 1770687657.7863872, 'wait_for_prev_duration_secs': 0.00018596649169921875, 'checkpointer_blocking_start_time': 1770687657.7868, 'checkpointer_blocking_duration_secs': 6.299865484237671, 'get_old_steps_start_time': 1770687664.0866814, 'get_old_steps_duration_secs': 0.0007560253143310547, 'checkpoint_manager_blocking_start_time': 1770687657.7863104, 'checkpoint_manager_blocking_duration_secs': 6.3017737865448} (1716439:standard_logger.py:34)
+100%|██████████████████████████████████████████████████████████████████████████| 20000/20000 [8:51:36<00:00,  3.49s/it]09:41:04.088 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 1.1 GiB/s (total bytes: 7.2 GiB) (time elapsed: 6 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+100%|██████████████████████████████████████████████████████████████████████████| 20000/20000 [8:51:36<00:00,  1.59s/it]
+09:41:04.089 [I] Waiting for checkpoint manager to finish                                         (1716439:train.py:284)
+09:41:04.089 [I] [process=0][thread=MainThread][step=19999][wait_until_finished] Waiting for Save Finalize thread (save_finalize) to complete. (1716439:checkpoint_manager.py:1998)
+09:41:04.092 [I] [process=0][thread=array_type_handler] Wrote 105 array_metadata.ArrayMetadata to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/train_state.orbax-checkpoint-tmp-15/array_metadatas/process_0 (1716439:array_metadata_store.py:198)
+09:41:05.278 [I] [process=0] /jax/checkpoint/write/bytes_per_sec: 475.8 MiB/s (total bytes: 3.5 GiB) (time elapsed: 7 seconds) (per-host) (1716439:base_pytree_checkpoint_handler.py:114)
+09:41:05.279 [I] [process=0][thread=async_save] 5 Handler Commit operations completed.            (1716439:async_checkpointer.py:87)
+09:41:05.279 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/assets.orbax-checkpoint-tmp-13 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/assets (1716439:atomicity.py:289)
+09:41:05.280 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+09:41:05.288 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/train_state.orbax-checkpoint-tmp-15 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/train_state (1716439:atomicity.py:289)
+09:41:05.289 [I] [process=0][thread=async_save] Skipped cross-host ArrayMetadata validation because only one process is found: process_index=0. (1716439:array_metadata_store.py:362)
+09:41:05.299 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/params.orbax-checkpoint-tmp-14 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12/params (1716439:atomicity.py:289)
+09:41:05.299 [I] Renaming /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999.orbax-checkpoint-tmp-12 to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999 (1716439:atomicity.py:289)
+09:41:05.299 [I] [process=0][thread=async_save] Finished saving checkpoint (finalized tmp dir) to `/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999`. (1716439:atomicity.py:573)
+09:41:05.299 [I] Finished asynchronous save (blocking + background) in 7.51 seconds to /home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999 (1716439:async_checkpointer.py:412)
+09:41:05.299 [I] [process=0][thread=async_save] Background save thread done.                      (1716439:async_checkpointer.py:143)
+09:41:05.299 [I] [process=0][thread=save_finalize] Done with waiting for background save thread=async_save. (1716439:async_checkpointer.py:266)
+09:41:05.299 [I] [process=0][thread=save_finalize] No errors found in background save thread=async_save. (1716439:async_checkpointer.py:276)
+09:41:05.299 [I] [process=0][thread=save_finalize][step=19999] CheckpointManager Save Finalize is syncing with other hosts... (1716439:checkpoint_manager.py:2095)
+09:41:05.299 [I] [process=0][thread=save_finalize][step=19999] CheckpointManager Save Finalize is done on all hosts. (1716439:checkpoint_manager.py:2110)
+09:41:05.299 [I] [process=0][thread=MainThread][step=19999][wait_until_finished] Done waiting for Save Finalize thread (save_finalize) running at step=19999. (1716439:checkpoint_manager.py:2010)

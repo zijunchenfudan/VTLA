@@ -1,0 +1,7 @@
+{"time":"2026-02-07T23:51:02.031621229+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_235102-ewndrd8u/logs/debug-core.log"}
+{"time":"2026-02-07T23:51:02.749310597+08:00","level":"INFO","msg":"created new stream","id":"ewndrd8u"}
+{"time":"2026-02-07T23:51:02.749340774+08:00","level":"INFO","msg":"stream: started","id":"ewndrd8u"}
+{"time":"2026-02-07T23:51:02.749368035+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ewndrd8u"}
+{"time":"2026-02-07T23:51:02.749368606+08:00","level":"INFO","msg":"sender: started","stream_id":"ewndrd8u"}
+{"time":"2026-02-07T23:51:02.749363897+08:00","level":"INFO","msg":"handler: started","stream_id":"ewndrd8u"}
+{"time":"2026-02-07T23:51:03.369659548+08:00","level":"INFO","msg":"Starting system monitor"}

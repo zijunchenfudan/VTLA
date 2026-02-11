@@ -1,0 +1,15 @@
+{"time":"2026-02-05T18:34:09.594464783+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260205_183409-qom4xcm4/logs/debug-core.log"}
+{"time":"2026-02-05T18:34:11.482966306+08:00","level":"INFO","msg":"created new stream","id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:11.482987105+08:00","level":"INFO","msg":"stream: started","id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:11.483009177+08:00","level":"INFO","msg":"handler: started","stream_id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:11.483013866+08:00","level":"INFO","msg":"sender: started","stream_id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:11.483044584+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:12.138721624+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-05T18:34:37.206560845+08:00","level":"INFO","msg":"stream: closing","id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:37.206591914+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-05T18:34:37.212064515+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-05T18:34:39.539476424+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-05T18:34:42.067140347+08:00","level":"INFO","msg":"handler: closed","stream_id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:42.067175844+08:00","level":"INFO","msg":"sender: closed","stream_id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:42.067171747+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qom4xcm4"}
+{"time":"2026-02-05T18:34:42.067240778+08:00","level":"INFO","msg":"stream: closed","id":"qom4xcm4"}

@@ -1,0 +1,15 @@
+{"time":"2026-02-10T21:58:36.178000608+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260210_215836-owgfh54x/logs/debug-core.log"}
+{"time":"2026-02-10T21:58:37.066867678+08:00","level":"INFO","msg":"created new stream","id":"owgfh54x"}
+{"time":"2026-02-10T21:58:37.066899638+08:00","level":"INFO","msg":"stream: started","id":"owgfh54x"}
+{"time":"2026-02-10T21:58:37.066908966+08:00","level":"INFO","msg":"sender: started","stream_id":"owgfh54x"}
+{"time":"2026-02-10T21:58:37.066916981+08:00","level":"INFO","msg":"handler: started","stream_id":"owgfh54x"}
+{"time":"2026-02-10T21:58:37.066925808+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"owgfh54x"}
+{"time":"2026-02-10T21:58:37.67369387+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-10T21:59:06.737268581+08:00","level":"INFO","msg":"stream: closing","id":"owgfh54x"}
+{"time":"2026-02-10T21:59:06.737350085+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-10T21:59:06.737414997+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-10T21:59:08.101190956+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-10T21:59:08.816989222+08:00","level":"INFO","msg":"handler: closed","stream_id":"owgfh54x"}
+{"time":"2026-02-10T21:59:08.817030971+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"owgfh54x"}
+{"time":"2026-02-10T21:59:08.817047191+08:00","level":"INFO","msg":"sender: closed","stream_id":"owgfh54x"}
+{"time":"2026-02-10T21:59:08.817081486+08:00","level":"INFO","msg":"stream: closed","id":"owgfh54x"}

@@ -1,0 +1,15 @@
+{"time":"2026-02-05T18:07:26.127351881+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260205_180726-5wix12ab/logs/debug-core.log"}
+{"time":"2026-02-05T18:07:30.645960212+08:00","level":"INFO","msg":"created new stream","id":"5wix12ab"}
+{"time":"2026-02-05T18:07:30.645991651+08:00","level":"INFO","msg":"stream: started","id":"5wix12ab"}
+{"time":"2026-02-05T18:07:30.646016949+08:00","level":"INFO","msg":"sender: started","stream_id":"5wix12ab"}
+{"time":"2026-02-05T18:07:30.646016869+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"5wix12ab"}
+{"time":"2026-02-05T18:07:30.646050943+08:00","level":"INFO","msg":"handler: started","stream_id":"5wix12ab"}
+{"time":"2026-02-05T18:07:31.127714269+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-05T18:07:57.195782665+08:00","level":"INFO","msg":"stream: closing","id":"5wix12ab"}
+{"time":"2026-02-05T18:07:57.195802373+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-05T18:07:57.19582209+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-05T18:08:00.413510285+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-05T18:08:04.383793559+08:00","level":"INFO","msg":"handler: closed","stream_id":"5wix12ab"}
+{"time":"2026-02-05T18:08:04.383837312+08:00","level":"INFO","msg":"sender: closed","stream_id":"5wix12ab"}
+{"time":"2026-02-05T18:08:04.383828846+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"5wix12ab"}
+{"time":"2026-02-05T18:08:04.383906783+08:00","level":"INFO","msg":"stream: closed","id":"5wix12ab"}

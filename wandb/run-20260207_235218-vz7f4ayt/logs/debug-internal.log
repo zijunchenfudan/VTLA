@@ -1,0 +1,15 @@
+{"time":"2026-02-07T23:52:18.614462365+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_235218-vz7f4ayt/logs/debug-core.log"}
+{"time":"2026-02-07T23:52:19.393056093+08:00","level":"INFO","msg":"created new stream","id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:19.393073366+08:00","level":"INFO","msg":"stream: started","id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:19.393081862+08:00","level":"INFO","msg":"handler: started","stream_id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:19.393102791+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:19.393114984+08:00","level":"INFO","msg":"sender: started","stream_id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:19.894491164+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T23:52:47.982124548+08:00","level":"INFO","msg":"stream: closing","id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:47.982171286+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T23:52:47.982206933+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T23:52:49.246461434+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T23:52:50.129961551+08:00","level":"INFO","msg":"handler: closed","stream_id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:50.130009231+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:50.130014321+08:00","level":"INFO","msg":"sender: closed","stream_id":"vz7f4ayt"}
+{"time":"2026-02-07T23:52:50.130076277+08:00","level":"INFO","msg":"stream: closed","id":"vz7f4ayt"}

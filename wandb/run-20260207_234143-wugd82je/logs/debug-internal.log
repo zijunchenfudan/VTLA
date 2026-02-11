@@ -1,0 +1,15 @@
+{"time":"2026-02-07T23:41:43.923055807+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_234143-wugd82je/logs/debug-core.log"}
+{"time":"2026-02-07T23:41:44.637037617+08:00","level":"INFO","msg":"created new stream","id":"wugd82je"}
+{"time":"2026-02-07T23:41:44.637057895+08:00","level":"INFO","msg":"stream: started","id":"wugd82je"}
+{"time":"2026-02-07T23:41:44.637076891+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"wugd82je"}
+{"time":"2026-02-07T23:41:44.637077702+08:00","level":"INFO","msg":"sender: started","stream_id":"wugd82je"}
+{"time":"2026-02-07T23:41:44.637104192+08:00","level":"INFO","msg":"handler: started","stream_id":"wugd82je"}
+{"time":"2026-02-07T23:41:45.119558154+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T23:42:15.186470919+08:00","level":"INFO","msg":"stream: closing","id":"wugd82je"}
+{"time":"2026-02-07T23:42:15.186506026+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T23:42:15.186536673+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T23:42:17.262158602+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T23:42:17.918977946+08:00","level":"INFO","msg":"handler: closed","stream_id":"wugd82je"}
+{"time":"2026-02-07T23:42:17.919007772+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"wugd82je"}
+{"time":"2026-02-07T23:42:17.919033941+08:00","level":"INFO","msg":"sender: closed","stream_id":"wugd82je"}
+{"time":"2026-02-07T23:42:17.919045363+08:00","level":"INFO","msg":"stream: closed","id":"wugd82je"}

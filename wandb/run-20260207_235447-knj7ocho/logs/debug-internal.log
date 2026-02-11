@@ -1,0 +1,15 @@
+{"time":"2026-02-07T23:54:47.907177682+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_235447-knj7ocho/logs/debug-core.log"}
+{"time":"2026-02-07T23:54:48.625080734+08:00","level":"INFO","msg":"created new stream","id":"knj7ocho"}
+{"time":"2026-02-07T23:54:48.625100151+08:00","level":"INFO","msg":"stream: started","id":"knj7ocho"}
+{"time":"2026-02-07T23:54:48.625123695+08:00","level":"INFO","msg":"sender: started","stream_id":"knj7ocho"}
+{"time":"2026-02-07T23:54:48.625123966+08:00","level":"INFO","msg":"handler: started","stream_id":"knj7ocho"}
+{"time":"2026-02-07T23:54:48.625162208+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"knj7ocho"}
+{"time":"2026-02-07T23:54:49.33463339+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T23:55:24.272166243+08:00","level":"INFO","msg":"stream: closing","id":"knj7ocho"}
+{"time":"2026-02-07T23:55:24.272225484+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T23:55:24.272294675+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T23:55:25.562709869+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T23:55:26.356759135+08:00","level":"INFO","msg":"handler: closed","stream_id":"knj7ocho"}
+{"time":"2026-02-07T23:55:26.356784923+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"knj7ocho"}
+{"time":"2026-02-07T23:55:26.356797427+08:00","level":"INFO","msg":"sender: closed","stream_id":"knj7ocho"}
+{"time":"2026-02-07T23:55:26.356824668+08:00","level":"INFO","msg":"stream: closed","id":"knj7ocho"}

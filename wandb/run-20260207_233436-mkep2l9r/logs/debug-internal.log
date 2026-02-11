@@ -1,0 +1,15 @@
+{"time":"2026-02-07T23:34:36.724011826+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_233436-mkep2l9r/logs/debug-core.log"}
+{"time":"2026-02-07T23:34:37.439117099+08:00","level":"INFO","msg":"created new stream","id":"mkep2l9r"}
+{"time":"2026-02-07T23:34:37.439140292+08:00","level":"INFO","msg":"stream: started","id":"mkep2l9r"}
+{"time":"2026-02-07T23:34:37.43915514+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"mkep2l9r"}
+{"time":"2026-02-07T23:34:37.439160981+08:00","level":"INFO","msg":"handler: started","stream_id":"mkep2l9r"}
+{"time":"2026-02-07T23:34:37.439172894+08:00","level":"INFO","msg":"sender: started","stream_id":"mkep2l9r"}
+{"time":"2026-02-07T23:34:37.978601669+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T23:35:31.049559748+08:00","level":"INFO","msg":"stream: closing","id":"mkep2l9r"}
+{"time":"2026-02-07T23:35:31.049580227+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T23:35:31.049613119+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T23:35:32.332085017+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T23:35:33.757873094+08:00","level":"INFO","msg":"handler: closed","stream_id":"mkep2l9r"}
+{"time":"2026-02-07T23:35:33.7579295+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"mkep2l9r"}
+{"time":"2026-02-07T23:35:33.757940961+08:00","level":"INFO","msg":"sender: closed","stream_id":"mkep2l9r"}
+{"time":"2026-02-07T23:35:33.757988431+08:00","level":"INFO","msg":"stream: closed","id":"mkep2l9r"}

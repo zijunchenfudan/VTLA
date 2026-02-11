@@ -1,0 +1,15 @@
+{"time":"2026-02-05T18:38:24.624495688+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260205_183824-dodzydks/logs/debug-core.log"}
+{"time":"2026-02-05T18:38:26.525006685+08:00","level":"INFO","msg":"created new stream","id":"dodzydks"}
+{"time":"2026-02-05T18:38:26.525039597+08:00","level":"INFO","msg":"stream: started","id":"dodzydks"}
+{"time":"2026-02-05T18:38:26.525059745+08:00","level":"INFO","msg":"handler: started","stream_id":"dodzydks"}
+{"time":"2026-02-05T18:38:26.525074603+08:00","level":"INFO","msg":"sender: started","stream_id":"dodzydks"}
+{"time":"2026-02-05T18:38:26.525097146+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"dodzydks"}
+{"time":"2026-02-05T18:38:27.108647684+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-05T18:38:53.175878591+08:00","level":"INFO","msg":"stream: closing","id":"dodzydks"}
+{"time":"2026-02-05T18:38:53.175947552+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-05T18:38:53.180869655+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-05T18:38:54.458326737+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-05T18:38:56.678570567+08:00","level":"INFO","msg":"handler: closed","stream_id":"dodzydks"}
+{"time":"2026-02-05T18:38:56.678610182+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"dodzydks"}
+{"time":"2026-02-05T18:38:56.678630911+08:00","level":"INFO","msg":"sender: closed","stream_id":"dodzydks"}
+{"time":"2026-02-05T18:38:56.678661299+08:00","level":"INFO","msg":"stream: closed","id":"dodzydks"}

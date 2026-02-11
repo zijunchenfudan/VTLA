@@ -1,0 +1,15 @@
+{"time":"2026-02-10T22:26:35.871947123+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260210_222635-glynyiff/logs/debug-core.log"}
+{"time":"2026-02-10T22:26:36.748854126+08:00","level":"INFO","msg":"created new stream","id":"glynyiff"}
+{"time":"2026-02-10T22:26:36.748885154+08:00","level":"INFO","msg":"stream: started","id":"glynyiff"}
+{"time":"2026-02-10T22:26:36.748905893+08:00","level":"INFO","msg":"sender: started","stream_id":"glynyiff"}
+{"time":"2026-02-10T22:26:36.7489044+08:00","level":"INFO","msg":"handler: started","stream_id":"glynyiff"}
+{"time":"2026-02-10T22:26:36.748936731+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"glynyiff"}
+{"time":"2026-02-10T22:26:37.420908925+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-10T22:27:04.663564242+08:00","level":"INFO","msg":"stream: closing","id":"glynyiff"}
+{"time":"2026-02-10T22:27:04.663604678+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-10T22:27:04.663636408+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-10T22:27:05.937953801+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-10T22:27:06.664702034+08:00","level":"INFO","msg":"handler: closed","stream_id":"glynyiff"}
+{"time":"2026-02-10T22:27:06.664727392+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"glynyiff"}
+{"time":"2026-02-10T22:27:06.664740977+08:00","level":"INFO","msg":"sender: closed","stream_id":"glynyiff"}
+{"time":"2026-02-10T22:27:06.6648064+08:00","level":"INFO","msg":"stream: closed","id":"glynyiff"}

@@ -1,0 +1,15 @@
+{"time":"2026-02-05T18:43:09.328420751+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260205_184309-tc7yerjo/logs/debug-core.log"}
+{"time":"2026-02-05T18:43:11.139392364+08:00","level":"INFO","msg":"created new stream","id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:11.139422832+08:00","level":"INFO","msg":"stream: started","id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:11.139470422+08:00","level":"INFO","msg":"sender: started","stream_id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:11.139472436+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:11.139482124+08:00","level":"INFO","msg":"handler: started","stream_id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:11.682569232+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-05T18:43:37.753975262+08:00","level":"INFO","msg":"stream: closing","id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:37.753996993+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-05T18:43:37.754018194+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-05T18:43:39.328613849+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-05T18:43:41.643849764+08:00","level":"INFO","msg":"handler: closed","stream_id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:41.643890541+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:41.643930026+08:00","level":"INFO","msg":"sender: closed","stream_id":"tc7yerjo"}
+{"time":"2026-02-05T18:43:41.643942079+08:00","level":"INFO","msg":"stream: closed","id":"tc7yerjo"}

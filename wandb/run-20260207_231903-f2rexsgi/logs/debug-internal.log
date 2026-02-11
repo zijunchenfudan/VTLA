@@ -1,0 +1,15 @@
+{"time":"2026-02-07T23:19:03.130536063+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260207_231903-f2rexsgi/logs/debug-core.log"}
+{"time":"2026-02-07T23:19:03.848825255+08:00","level":"INFO","msg":"created new stream","id":"f2rexsgi"}
+{"time":"2026-02-07T23:19:03.84884913+08:00","level":"INFO","msg":"stream: started","id":"f2rexsgi"}
+{"time":"2026-02-07T23:19:03.84886491+08:00","level":"INFO","msg":"handler: started","stream_id":"f2rexsgi"}
+{"time":"2026-02-07T23:19:03.84888074+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"f2rexsgi"}
+{"time":"2026-02-07T23:19:03.848895167+08:00","level":"INFO","msg":"sender: started","stream_id":"f2rexsgi"}
+{"time":"2026-02-07T23:19:04.462797811+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-07T23:20:18.533104132+08:00","level":"INFO","msg":"stream: closing","id":"f2rexsgi"}
+{"time":"2026-02-07T23:20:18.533167331+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-07T23:20:18.533213788+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-07T23:20:19.824347026+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-07T23:20:21.171480227+08:00","level":"INFO","msg":"handler: closed","stream_id":"f2rexsgi"}
+{"time":"2026-02-07T23:20:21.171507499+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"f2rexsgi"}
+{"time":"2026-02-07T23:20:21.171530973+08:00","level":"INFO","msg":"sender: closed","stream_id":"f2rexsgi"}
+{"time":"2026-02-07T23:20:21.171580837+08:00","level":"INFO","msg":"stream: closed","id":"f2rexsgi"}
