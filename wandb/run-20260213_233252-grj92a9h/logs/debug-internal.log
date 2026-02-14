@@ -1,0 +1,15 @@
+{"time":"2026-02-13T23:32:52.598228058+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260213_233252-grj92a9h/logs/debug-core.log"}
+{"time":"2026-02-13T23:32:54.373414872+08:00","level":"INFO","msg":"created new stream","id":"grj92a9h"}
+{"time":"2026-02-13T23:32:54.3734351+08:00","level":"INFO","msg":"stream: started","id":"grj92a9h"}
+{"time":"2026-02-13T23:32:54.373454075+08:00","level":"INFO","msg":"sender: started","stream_id":"grj92a9h"}
+{"time":"2026-02-13T23:32:54.373459375+08:00","level":"INFO","msg":"handler: started","stream_id":"grj92a9h"}
+{"time":"2026-02-13T23:32:54.373478251+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"grj92a9h"}
+{"time":"2026-02-13T23:32:54.886861548+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-13T23:34:20.953720833+08:00","level":"INFO","msg":"stream: closing","id":"grj92a9h"}
+{"time":"2026-02-13T23:34:20.953744848+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-13T23:34:20.953784312+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-13T23:34:22.057832713+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-13T23:34:24.203893216+08:00","level":"INFO","msg":"handler: closed","stream_id":"grj92a9h"}
+{"time":"2026-02-13T23:34:24.203915998+08:00","level":"INFO","msg":"sender: closed","stream_id":"grj92a9h"}
+{"time":"2026-02-13T23:34:24.203913914+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"grj92a9h"}
+{"time":"2026-02-13T23:34:24.203958748+08:00","level":"INFO","msg":"stream: closed","id":"grj92a9h"}

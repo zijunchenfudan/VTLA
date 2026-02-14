@@ -271,6 +271,22 @@ class TokenizePrompt(DataTransformFn):
 
         tokens, token_masks = self.tokenizer.tokenize(prompt, state, tactile)
         return {**data, "tokenized_prompt": tokens, "tokenized_prompt_mask": token_masks}
+    
+@dataclasses.dataclass(frozen=True)
+class AddTactileToAction(DataTransformFn):
+    tactile_mode: str = "NONE"
+    
+    def __call__(self, data: DataDict) -> DataDict:
+        if self.tactile_mode != "ACTION_TACTILE":
+            return data
+        
+        if (tactile := data.get("tactile", None)) is None:
+            raise ValueError("Tactile data is required for tactile injection.")
+        proximity_raw = tactile[..., 9:12]
+        proximity = np.linalg.norm(proximity_raw, axis=-1)
+
+        new_actions = np.concatenate([data.get("actions"), proximity], axis=-1)
+        return {**data, "actions": new_actions}
 
 
 @dataclasses.dataclass(frozen=True)

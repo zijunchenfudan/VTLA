@@ -1,0 +1,156 @@
+23:30:18.091 [I] Loaded norm stats from /home/ps/VTLA/VTLA/assets/pi05_lora_tactile/VTLA/Tactile2Action (133471:config.py:199)
+23:30:18.091 [I] data_config: DataConfig(repo_id='VTLA/Tactile2Action', asset_id='VTLA/Tactile2Action', norm_stats={'state': NormStats(mean=array([-0.52446342,  0.81227362,  0.66414344, -1.04715478,  0.3930046 ,
+       -0.3284539 ,  0.10920384,  0.23211423]), std=array([0.27591848, 0.37008345, 0.38471973, 0.36934271, 0.27494231,
+       0.19908519, 0.19895737, 0.29355121]), q01=array([-1.11303477, -0.10330292, -0.14873387, -1.74372798, -0.23446374,
+       -0.60729906, -0.32080525,  0.        ]), q99=array([ 0.15367942,  1.41675744,  1.6026132 , -0.15008001,  0.98555018,
+        0.11062911,  0.59083472,  0.85879999])), 'actions': NormStats(mean=array([-1.91626325e-02, -1.36749838e-02, -3.08878347e-03, -2.85441731e-03,
+       -4.88695316e-03, -2.99050612e-03, -3.54438415e-03,  2.32261837e-01,
+        1.21777312e+06,  5.25099812e+05,  3.03426750e+05,  1.85215188e+05,
+        2.89350098e+04]), std=array([1.78462327e-01, 2.68639863e-01, 2.08806321e-01, 2.70126075e-01,
+       1.77534357e-01, 1.05977021e-01, 9.61417481e-02, 2.93461055e-01,
+       2.60306550e+06, 1.17413488e+06, 6.84973375e+05, 3.83063469e+05,
+       1.26872016e+05]), q01=array([-0.52900223, -0.96887251, -0.59577133, -0.81427475, -0.61981788,
+       -0.30803317, -0.37961539,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ]), q99=array([5.70654340e-01, 6.66239918e-01, 6.28904679e-01, 6.96874086e-01,
+       6.18376409e-01, 3.83086439e-01, 3.11067020e-01, 8.58799989e-01,
+       9.85159687e+06, 4.91140513e+06, 2.84309871e+06, 1.61250012e+06,
+       5.17761750e+05]))}, repack_transforms=Group(inputs=[RepackTransform(structure={'images': {'camera_top': 'observation.images.camera_top'}, 'state': 'observation.state', 'tactile': 'observation.tactile', 'actions': 'action'})], outputs=()), data_transforms=Group(inputs=(TactileInputs(model_type=<ModelType.PI05: 'pi05'>), DeltaActions(mask=(True, True, True, True, True, True, True, False))), outputs=(AbsoluteActions(mask=(True, True, True, True, True, True, True, False)), TactileOutputs())), model_transforms=Group(inputs=[InjectDefaultPrompt(prompt='Pick and place two green tennis balls into the bowl'), ResizeImages(height=224, width=224), TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x7905d8d763d0>, discrete_state_input=True, discrete_tactile_input=True), PadStatesAndActions(model_action_dim=32)], outputs=()), use_quantile_norm=True, action_sequence_keys=('action',), prompt_from_task=False, rlds_data_dir=None, action_space=None, datasets=()) (133471:data_loader.py:243)
+Resolving data files: 100%|██████████████████████████████████████████████████████████| 186/186 [00:00<00:00, 764094.56it/s]
+23:30:20.784 [I] local_batch_size: 16                                                             (133471:data_loader.py:324)
+23:30:44.432 [I] Initialized data loader:
+[0].images['base_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (16,)@bool
+[0].image_masks['left_wrist_0_rgb']: (16,)@bool
+[0].image_masks['right_wrist_0_rgb']: (16,)@bool
+[0].state: (16, 32)@float32
+[0].tactile: (16, 5, 12)@float32
+[0].tokenized_prompt: (16, 512)@int32
+[0].tokenized_prompt_mask: (16, 512)@bool
+[1]: (16, 50, 32)@float32 (133471:train.py:236)
+23:30:47.287 [I] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x79072553ab50> (133471:base_pytree_checkpoint_handler.py:334)
+23:30:47.299 [I] Restoring checkpoint from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (133471:checkpointer.py:298)
+23:30:50.579 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 3.8 GiB/s (total bytes: 12.5 GiB) (time elapsed: 3 seconds) (per-host) (133471:base_pytree_checkpoint_handler.py:114)
+23:30:50.579 [I] Finished restoring checkpoint in 3.28 seconds from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (133471:checkpointer.py:309)
+23:30:53.590 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@bfloat16
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['bias'].value: (3072,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['kernel'].value: (1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['lora_a'].value: (18, 8, 256, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['lora_b'].value: (18, 8, 16, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['lora_a'].value: (18, 8, 256, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['lora_b'].value: (18, 8, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['lora_a'].value: (18, 2, 1, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['lora_b'].value: (18, 2, 1, 16, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_a'].value: (18, 2, 1, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_b'].value: (18, 2, 1, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['lora_a'].value: (18, 8, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['lora_b'].value: (18, 8, 16, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_a'].value: (18, 8, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_b'].value: (18, 8, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum_lora_a'].value: (18, 2, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum_lora_b'].value: (18, 2, 16, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['linear_lora_a'].value: (18, 16384, 16)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear_lora_b'].value: (18, 16, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_a'].value: (18, 2, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_b'].value: (18, 2, 32, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_a'].value: (18, 4096, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_b'].value: (18, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['time_mlp_in']['bias'].value: (1024,)@float32
+['time_mlp_in']['kernel'].value: (1024, 1024)@float32
+['time_mlp_out']['bias'].value: (1024,)@float32
+['time_mlp_out']['kernel'].value: (1024, 1024)@float32 (133471:train.py:247)
+  0%|                                                                                | 1/20000 [00:33<186:26:52, 33.56s/it]
+
+=== LOSS VERIFICATION (Batch 0, Time 0) ===
+Shapes -> Error: (Array(16, dtype=int32), Array(50, dtype=int32), Array(32, dtype=int32)), Weight: (Array(16, dtype=int32), Array(50, dtype=int32), Array(32, dtype=int32))
+Region 1: Robot (Idx 0-7)
+  - Weights (Expect all 1.0): [1. 1. 1. 1. 1. 1. 1. 1.]
+Region 2: Tactile (Idx 8-12)
+  - Raw Values (Normed):      [-1. -1. -1. -1. -1.]
+  - Threshold (-0.95):        [False False False False False]
+  - Weights (Expect 0.1/5.0): [0.1 0.1 0.1 0.1 0.1]
+Region 3: Padding (Idx 13-31)
+  - Weights (Expect all 0.0): [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+===========================================
+
+Step 0: grad_norm=0.5121, loss=0.2128, param_norm=1803.8630
+
+=== LOSS VERIFICATION (Batch 0, Time 0) ===
+Shapes -> Error: (Array(16, dtype=int32), Array(50, dtype=int32), Array(32, dtype=int32)), Weight: (Array(16, dtype=int32), Array(50, dtype=int32), Array(32, dtype=int32))
+Region 1: Robot (Idx 0-7)
+  - Weights (Expect all 1.0): [1. 1. 1. 1. 1. 1. 1. 1.]
+Region 2: Tactile (Idx 8-12)
+  - Raw Values (Normed):      [-0.9585791  -1.         -1.         -0.96238637 -1.        ]
+  - Threshold (-0.95):        [False False False False False]
+  - Weights (Expect 0.1/5.0): [0.1 0.1 0.1 0.1 0.1]
+Region 3: Padding (Idx 13-31)
+  - Weights (Expect all 0.0): [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+===========================================
+Traceback (most recent call last):
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 289, in <module>
+    main(_config.cli())
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 279, in main
+    batch = next(data_iter)
+            ^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/training/data_loader.py", line 540, in __iter__
+    yield _model.Observation.from_dict(batch), batch["actions"]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/models/model.py", line 147, in from_dict
+    forces = log1p(forces) / np.log(1 + MAX_FORCE) * 2.0 - 1.0
+             ^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 441, in __array__
+    return np.asarray(self._value, dtype=dtype, **kwds)
+                      ^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 334, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 640, in _value
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

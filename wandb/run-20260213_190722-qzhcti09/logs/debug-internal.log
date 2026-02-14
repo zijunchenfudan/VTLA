@@ -1,0 +1,11 @@
+{"time":"2026-02-13T19:07:22.948368347+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260213_190722-qzhcti09/logs/debug-core.log"}
+{"time":"2026-02-13T19:07:24.669068426+08:00","level":"INFO","msg":"created new stream","id":"qzhcti09"}
+{"time":"2026-02-13T19:07:24.669090407+08:00","level":"INFO","msg":"stream: started","id":"qzhcti09"}
+{"time":"2026-02-13T19:07:24.669113652+08:00","level":"INFO","msg":"sender: started","stream_id":"qzhcti09"}
+{"time":"2026-02-13T19:07:24.669115104+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"qzhcti09"}
+{"time":"2026-02-13T19:07:24.674860153+08:00","level":"INFO","msg":"handler: started","stream_id":"qzhcti09"}
+{"time":"2026-02-13T19:07:25.234126137+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-13T19:08:42.645713436+08:00","level":"INFO","msg":"stream: closing","id":"qzhcti09"}
+{"time":"2026-02-13T19:08:42.645795902+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-13T19:08:42.64583689+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-13T19:08:43.728614666+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

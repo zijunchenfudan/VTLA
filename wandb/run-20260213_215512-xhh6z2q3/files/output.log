@@ -1,0 +1,18 @@
+21:55:14.691 [I] Norm stats not found in /home/ps/VTLA/VTLA/assets/pi05_lora_tactile/VTLA/Tactile2Action, skipping. (109938:config.py:202)
+21:55:14.692 [I] data_config: DataConfig(repo_id='VTLA/Tactile2Action', asset_id='VTLA/Tactile2Action', norm_stats=None, repack_transforms=Group(inputs=[RepackTransform(structure={'images': {'camera_top': 'observation.images.camera_top'}, 'state': 'observation.state', 'tactile': 'observation.tactile', 'actions': 'action'})], outputs=()), data_transforms=Group(inputs=(TactileInputs(model_type=<ModelType.PI05: 'pi05'>), DeltaActions(mask=(True, True, True, True, True, True, True, False))), outputs=(AbsoluteActions(mask=(True, True, True, True, True, True, True, False)), TactileOutputs())), model_transforms=Group(inputs=[InjectDefaultPrompt(prompt='Pick and place two green tennis balls into the bowl'), ResizeImages(height=224, width=224), TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x72f6d7823d10>, discrete_state_input=True, discrete_tactile_input=True), PadStatesAndActions(model_action_dim=32)], outputs=()), use_quantile_norm=True, action_sequence_keys=('action',), prompt_from_task=False, rlds_data_dir=None, action_space=None, datasets=()) (109938:data_loader.py:243)
+Resolving data files: 100%|██████████████████████████████████████████████████████████| 186/186 [00:00<00:00, 944480.08it/s]
+Traceback (most recent call last):
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 289, in <module>
+    main(_config.cli())
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 229, in main
+    data_loader = _data_loader.create_data_loader(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/training/data_loader.py", line 256, in create_data_loader
+    return create_torch_data_loader(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/training/data_loader.py", line 303, in create_torch_data_loader
+    dataset = transform_dataset(dataset, data_config, skip_norm_stats=skip_norm_stats)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/training/data_loader.py", line 177, in transform_dataset
+    raise ValueError(
+ValueError: Normalization stats not found. Make sure to run `scripts/compute_norm_stats.py --config-name=<your-config>`.

@@ -1,0 +1,181 @@
+19:14:42.026 [I] Loaded norm stats from gs://openpi-assets/checkpoints/pi05_base/assets/trossen   (97877:config.py:199)
+19:14:42.027 [I] data_config: DataConfig(repo_id='VTLA/Tactile2Action', asset_id='trossen', norm_stats={'actions': NormStats(mean=array([-4.93135245e-04,  1.27776004e-02,  2.02304833e-02,  1.23331591e-03,
+       -6.41778670e-03,  4.07096464e-04,  4.98429745e-01, -6.65830623e-04,
+        1.74387880e-02,  1.86176877e-02,  1.52963807e-03, -5.46285743e-03,
+        5.52790298e-04,  4.54312265e-01]), std=array([0.11247057, 0.17499542, 0.15172264, 0.12939453, 0.17761523,
+       0.16276594, 0.40857881, 0.1209663 , 0.19503564, 0.17451566,
+       0.15615851, 0.19515406, 0.20168738, 0.390746  ]), q01=array([-0.39002883, -0.59919751, -0.47576952, -0.43423963, -0.56675076,
+       -0.5542984 ,  0.        , -0.39533174, -0.64484382, -0.55134225,
+       -0.50822616, -0.61669207, -0.65532517,  0.        ]), q99=array([0.37967372, 0.57934165, 0.55156469, 0.43433714, 0.59048438,
+       0.54518175, 0.99979997, 0.41405535, 0.63123417, 0.61108637,
+       0.50291276, 0.63992548, 0.6665833 , 0.99979997])), 'state': NormStats(mean=array([ 0.07856607,  0.4520582 , -0.69770384,  0.09579104,  0.4286657 ,
+       -0.21089827,  0.49729466, -0.0543999 ,  0.2941359 , -0.56845224,
+       -0.08104772,  0.50191855,  0.21621925,  0.46373561]), std=array([0.3015573 , 0.58221459, 0.53911948, 0.3004154 , 0.49505186,
+       0.4686898 , 0.37784192, 0.31669065, 0.55915791, 0.52675462,
+       0.33406934, 0.49514234, 0.57826167, 0.35625583]), q01=array([-0.67040759, -0.61772704, -1.52246916, -0.63415253, -0.89280969,
+       -1.58147383,  0.        , -0.86363459, -0.68741089, -1.53267694,
+       -1.0348208 , -0.8360551 , -1.0564065 ,  0.        ]), q99=array([0.85865986, 1.5901643 , 0.71916759, 0.94921017, 1.50092041,
+       0.84878683, 0.98179996, 0.718961  , 1.58284497, 0.82213724,
+       0.75847888, 1.50713861, 1.87825537, 0.98019999]))}, repack_transforms=Group(inputs=[RepackTransform(structure={'images': {'camera_top': 'observation.images.camera_top'}, 'state': 'observation.state', 'tactile': 'observation.tactile', 'actions': 'action'})], outputs=()), data_transforms=Group(inputs=(TactileInputs(model_type=<ModelType.PI05: 'pi05'>), DeltaActions(mask=(True, True, True, True, True, True, True, False))), outputs=(AbsoluteActions(mask=(True, True, True, True, True, True, True, False)), TactileOutputs())), model_transforms=Group(inputs=[InjectDefaultPrompt(prompt='Pick and place two green tennis balls into the bowl'), ResizeImages(height=224, width=224), TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x704daa2eb410>, discrete_state_input=True, discrete_tactile_input=True), PadStatesAndActions(model_action_dim=32)], outputs=()), use_quantile_norm=True, action_sequence_keys=('action',), prompt_from_task=False, rlds_data_dir=None, action_space=None, datasets=()) (97877:data_loader.py:243)
+Resolving data files: 100%|█████████████████████████████████████████████████████████| 186/186 [00:00<00:00, 1109730.50it/s]
+19:14:44.737 [I] local_batch_size: 16                                                             (97877:data_loader.py:324)
+19:15:08.116 [I] Initialized data loader:
+[0].images['base_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (16,)@bool
+[0].image_masks['left_wrist_0_rgb']: (16,)@bool
+[0].image_masks['right_wrist_0_rgb']: (16,)@bool
+[0].state: (16, 32)@float32
+[0].tactile: (16, 5, 12)@float32
+[0].tokenized_prompt: (16, 512)@int32
+[0].tokenized_prompt_mask: (16, 512)@bool
+[1]: (16, 50, 32)@float32 (97877:train.py:236)
+Traceback (most recent call last):
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 289, in <module>
+    main(_config.cli())
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 245, in main
+    train_state, train_state_sharding = init_train_state(config, init_rng, mesh, resume=resuming)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jaxtyping/_decorator.py", line 559, in wrapped_fn
+    return wrapped_fn_impl(args, kwargs, bound, memos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jaxtyping/_decorator.py", line 483, in wrapped_fn_impl
+    out = fn(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 125, in init_train_state
+    train_state_shape = jax.eval_shape(init, init_rng)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 180, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/api.py", line 2719, in eval_shape
+    return jit(fun).eval_shape(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 180, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/pjit.py", line 488, in eval_shape
+    p, _ = _infer_params(fun, jit_info, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/pjit.py", line 695, in _infer_params
+    return _infer_params_internal(fun, ji, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/pjit.py", line 718, in _infer_params_internal
+    p, args_flat = _infer_params_impl(
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/pjit.py", line 618, in _infer_params_impl
+    jaxpr, consts, out_avals, attrs_tracked = _create_pjit_jaxpr(
+                                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/linear_util.py", line 460, in memoized_fun
+    ans = call(fun, *args)
+          ^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/pjit.py", line 1289, in _create_pjit_jaxpr
+    jaxpr, global_out_avals, consts, attrs_tracked = pe.trace_to_jaxpr_dynamic(
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 334, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/interpreters/partial_eval.py", line 2181, in trace_to_jaxpr_dynamic
+    ans = fun.call_wrapped(*in_tracers)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/linear_util.py", line 210, in call_wrapped
+    return self.f_transformed(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/api_util.py", line 284, in _argnums_partial
+    return _fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/api_util.py", line 73, in flatten_fun
+    ans = f(*py_args, **py_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/linear_util.py", line 388, in _get_result_paths_thunk
+    ans = _fun(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 102, in init
+    model = config.model.create(model_rng)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/models/pi0_config.py", line 65, in create
+    return Pi0(self, rngs=nnx.Rngs(rng))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/nnx/object.py", line 79, in __call__
+    return _graph_node_meta_call(cls, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/nnx/object.py", line 88, in _graph_node_meta_call
+    cls._object_meta_construct(node, *args, **kwargs)
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/nnx/object.py", line 82, in _object_meta_construct
+    self.__init__(*args, **kwargs)
+  File "/home/ps/VTLA/VTLA/src/openpi/models/pi0.py", line 91, in __init__
+    img.lazy_init(next(iter(config.fake_obs().images.values())), train=False, rngs=rngs)
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/nnx/bridge/wrappers.py", line 129, in lazy_init
+    return lazy_init(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/nnx/bridge/wrappers.py", line 83, in lazy_init
+    _ = fn(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/nnx/bridge/wrappers.py", line 148, in __call__
+    out, variables = self.module.init_with_output(_rngs, *args, method=method, **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/traceback_util.py", line 180, in reraise_with_filtered_traceback
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 2299, in init_with_output
+    return init_with_output(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/core/scope.py", line 1115, in wrapper
+    return apply(fn, mutable=mutable, flags=init_flags)(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/core/scope.py", line 1079, in wrapper
+    y = fn(root, *args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 3088, in scope_fn
+    return fn(module.clone(parent=scope, _deep_clone=True), *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 699, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 1216, in _call_wrapped_method
+    y = run_fun(self, *args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/models/siglip.py", line 241, in __call__
+    x, out["encoder"] = Encoder(
+                        ^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 699, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 1216, in _call_wrapped_method
+    y = run_fun(self, *args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/models/siglip.py", line 161, in __call__
+    return nn.LayerNorm(name="encoder_norm", dtype=self.dtype_mm)(x), out
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 699, in wrapped_module_method
+    return self._call_wrapped_method(fun, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 1216, in _call_wrapped_method
+    y = run_fun(self, *args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/normalization.py", line 518, in __call__
+    return _normalize(
+           ^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/normalization.py", line 213, in _normalize
+    bias = mdl.param(
+           ^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/linen/module.py", line 1872, in param
+    v = self.scope.param(name, init_fn, *init_args, unbox=unbox, **init_kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/flax/core/scope.py", line 968, in param
+    value = init_fn(self.make_rng('params'), *init_args, **init_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/nn/initializers.py", line 67, in zeros
+    return jnp.zeros(shape, dtypes.canonicalize_dtype(dtype))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/numpy/array_creation.py", line 78, in zeros
+    return lax.full(shape, 0, dtypes.jax_dtype(dtype), sharding=util.normalize_device_to_sharding(device))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/lax/lax.py", line 3215, in full
+    shape = canonicalize_shape(shape)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/core.py", line 1752, in canonicalize_shape
+    return tuple(unsafe_map(_canonicalize_dimension, shape))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

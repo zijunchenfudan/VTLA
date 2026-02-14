@@ -1,0 +1,15 @@
+{"time":"2026-02-13T00:48:10.177111402+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260213_004810-gqxus5r4/logs/debug-core.log"}
+{"time":"2026-02-13T00:48:11.970618436+08:00","level":"INFO","msg":"created new stream","id":"gqxus5r4"}
+{"time":"2026-02-13T00:48:11.970643333+08:00","level":"INFO","msg":"stream: started","id":"gqxus5r4"}
+{"time":"2026-02-13T00:48:11.970654794+08:00","level":"INFO","msg":"handler: started","stream_id":"gqxus5r4"}
+{"time":"2026-02-13T00:48:11.970662158+08:00","level":"INFO","msg":"sender: started","stream_id":"gqxus5r4"}
+{"time":"2026-02-13T00:48:11.970675834+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"gqxus5r4"}
+{"time":"2026-02-13T00:48:12.499224632+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-13T00:49:57.582355086+08:00","level":"INFO","msg":"stream: closing","id":"gqxus5r4"}
+{"time":"2026-02-13T00:49:57.582373281+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-13T00:49:57.582414448+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-13T00:49:59.13093956+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-13T00:50:02.378414015+08:00","level":"INFO","msg":"handler: closed","stream_id":"gqxus5r4"}
+{"time":"2026-02-13T00:50:02.378438841+08:00","level":"INFO","msg":"sender: closed","stream_id":"gqxus5r4"}
+{"time":"2026-02-13T00:50:02.378433551+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gqxus5r4"}
+{"time":"2026-02-13T00:50:02.378495087+08:00","level":"INFO","msg":"stream: closed","id":"gqxus5r4"}

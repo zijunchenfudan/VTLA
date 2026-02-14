@@ -19,7 +19,7 @@ from openpi.policies import policy_config
 
 # 模型配置
 CONFIG_KEY = "pi05_lora_tactile"
-CHECKPOINT_DIR = "/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999"
+CHECKPOINT_DIR = "/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/ACTION_EXPERT_INPUT/19999"
 
 # 数据集配置
 DATASET_ROOT = "/home/ps/dataset/VTLA/Pick_and_Place_two_Tennis_Balls"

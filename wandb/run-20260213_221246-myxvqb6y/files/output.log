@@ -1,0 +1,341 @@
+22:12:48.647 [I] Loaded norm stats from /home/ps/VTLA/VTLA/assets/pi05_lora_tactile/VTLA/Tactile2Action (114578:config.py:199)
+22:12:48.648 [I] data_config: DataConfig(repo_id='VTLA/Tactile2Action', asset_id='VTLA/Tactile2Action', norm_stats={'state': NormStats(mean=array([-0.52446342,  0.81227362,  0.66414344, -1.04715478,  0.3930046 ,
+       -0.3284539 ,  0.10920384,  0.23211423]), std=array([0.27591848, 0.37008345, 0.38471973, 0.36934271, 0.27494231,
+       0.19908519, 0.19895737, 0.29355121]), q01=array([-1.11303477, -0.10330292, -0.14873387, -1.74372798, -0.23446374,
+       -0.60729906, -0.32080525,  0.        ]), q99=array([ 0.15367942,  1.41675744,  1.6026132 , -0.15008001,  0.98555018,
+        0.11062911,  0.59083472,  0.85879999])), 'actions': NormStats(mean=array([-1.91626325e-02, -1.36749838e-02, -3.08878347e-03, -2.85441731e-03,
+       -4.88695316e-03, -2.99050612e-03, -3.54438415e-03,  2.32261837e-01,
+        1.21777312e+06,  5.25099812e+05,  3.03426750e+05,  1.85215188e+05,
+        2.89350098e+04]), std=array([1.78462327e-01, 2.68639863e-01, 2.08806321e-01, 2.70126075e-01,
+       1.77534357e-01, 1.05977021e-01, 9.61417481e-02, 2.93461055e-01,
+       2.60306550e+06, 1.17413488e+06, 6.84973375e+05, 3.83063469e+05,
+       1.26872016e+05]), q01=array([-0.52900223, -0.96887251, -0.59577133, -0.81427475, -0.61981788,
+       -0.30803317, -0.37961539,  0.        ,  0.        ,  0.        ,
+        0.        ,  0.        ,  0.        ]), q99=array([5.70654340e-01, 6.66239918e-01, 6.28904679e-01, 6.96874086e-01,
+       6.18376409e-01, 3.83086439e-01, 3.11067020e-01, 8.58799989e-01,
+       9.85159687e+06, 4.91140513e+06, 2.84309871e+06, 1.61250012e+06,
+       5.17761750e+05]))}, repack_transforms=Group(inputs=[RepackTransform(structure={'images': {'camera_top': 'observation.images.camera_top'}, 'state': 'observation.state', 'tactile': 'observation.tactile', 'actions': 'action'})], outputs=()), data_transforms=Group(inputs=(TactileInputs(model_type=<ModelType.PI05: 'pi05'>), DeltaActions(mask=(True, True, True, True, True, True, True, False))), outputs=(AbsoluteActions(mask=(True, True, True, True, True, True, True, False)), TactileOutputs())), model_transforms=Group(inputs=[InjectDefaultPrompt(prompt='Pick and place two green tennis balls into the bowl'), ResizeImages(height=224, width=224), TokenizePrompt(tokenizer=<openpi.models.tokenizer.PaligemmaTokenizer object at 0x76dfaf355210>, discrete_state_input=True, discrete_tactile_input=True), PadStatesAndActions(model_action_dim=32)], outputs=()), use_quantile_norm=True, action_sequence_keys=('action',), prompt_from_task=False, rlds_data_dir=None, action_space=None, datasets=()) (114578:data_loader.py:243)
+Resolving data files: 100%|██████████████████████████████████████████████████████████| 186/186 [00:00<00:00, 871665.41it/s]
+22:12:51.140 [I] local_batch_size: 16                                                             (114578:data_loader.py:324)
+22:13:14.768 [I] Initialized data loader:
+[0].images['base_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['left_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].images['right_wrist_0_rgb']: (16, 224, 224, 3)@float32
+[0].image_masks['base_0_rgb']: (16,)@bool
+[0].image_masks['left_wrist_0_rgb']: (16,)@bool
+[0].image_masks['right_wrist_0_rgb']: (16,)@bool
+[0].state: (16, 32)@float32
+[0].tactile: (16, 5, 12)@float32
+[0].tokenized_prompt: (16, 512)@int32
+[0].tokenized_prompt_mask: (16, 512)@bool
+[1]: (16, 50, 32)@float32 (114578:train.py:236)
+22:13:17.520 [I] Created BasePyTreeCheckpointHandler: use_ocdbt=True, use_zarr3=False, pytree_metadata_options=PyTreeMetadataOptions(support_rich_types=False), array_metadata_store=<orbax.checkpoint._src.metadata.array_metadata_store.Store object at 0x76e0ffdb8350> (114578:base_pytree_checkpoint_handler.py:334)
+22:13:17.532 [I] Restoring checkpoint from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (114578:checkpointer.py:298)
+22:13:20.785 [I] [process=0] /jax/checkpoint/read/bytes_per_sec: 3.8 GiB/s (total bytes: 12.5 GiB) (time elapsed: 3 seconds) (per-host) (114578:base_pytree_checkpoint_handler.py:114)
+22:13:20.786 [I] Finished restoring checkpoint in 3.25 seconds from /home/ps/.cache/openpi/openpi-assets/checkpoints/pi05_base/params. (114578:checkpointer.py:309)
+22:13:24.221 [I] Initialized train state:
+['PaliGemma']['img']['Transformer']['encoder_norm']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoder_norm']['scale'].value: (1152,)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_0']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['LayerNorm_1']['scale'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['bias'].value: (27, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_0']['kernel'].value: (27, 1152, 4304)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MlpBlock_0']['Dense_1']['kernel'].value: (27, 4304, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['key']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['bias'].value: (27, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['out']['kernel'].value: (27, 16, 72, 1152)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['query']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['bias'].value: (27, 16, 72)@float32
+['PaliGemma']['img']['Transformer']['encoderblock']['MultiHeadDotProductAttention_0']['value']['kernel'].value: (27, 1152, 16, 72)@float32
+['PaliGemma']['img']['embedding']['bias'].value: (1152,)@float32
+['PaliGemma']['img']['embedding']['kernel'].value: (14, 14, 3, 1152)@float32
+['PaliGemma']['img']['head']['bias'].value: (2048,)@float32
+['PaliGemma']['img']['head']['kernel'].value: (1152, 2048)@float32
+['PaliGemma']['img']['pos_embedding'].value: (1, 256, 1152)@float32
+['PaliGemma']['llm']['embedder']['input_embedding'].value: (257152, 2048)@bfloat16
+['PaliGemma']['llm']['final_norm']['scale'].value: (2048,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['bias'].value: (3072,)@bfloat16
+['PaliGemma']['llm']['final_norm_1']['Dense_0']['kernel'].value: (1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['lora_a'].value: (18, 8, 256, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['lora_b'].value: (18, 8, 16, 2048)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum']['w'].value: (18, 8, 256, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['lora_a'].value: (18, 8, 256, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['lora_b'].value: (18, 8, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['attn']['attn_vec_einsum_1']['w'].value: (18, 8, 256, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['lora_a'].value: (18, 2, 1, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['lora_b'].value: (18, 2, 1, 16, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum']['w'].value: (18, 2, 1, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_a'].value: (18, 2, 1, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['lora_b'].value: (18, 2, 1, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['kv_einsum_1']['w'].value: (18, 2, 1, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['lora_a'].value: (18, 8, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['lora_b'].value: (18, 8, 16, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum']['w'].value: (18, 8, 2048, 256)@bfloat16
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_a'].value: (18, 8, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['lora_b'].value: (18, 8, 32, 256)@float32
+['PaliGemma']['llm']['layers']['attn']['q_einsum_1']['w'].value: (18, 8, 1024, 256)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum'].value: (18, 2, 2048, 16384)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum_lora_a'].value: (18, 2, 2048, 16)@float32
+['PaliGemma']['llm']['layers']['mlp']['gating_einsum_lora_b'].value: (18, 2, 16, 16384)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear'].value: (18, 16384, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['mlp']['linear_lora_a'].value: (18, 16384, 16)@float32
+['PaliGemma']['llm']['layers']['mlp']['linear_lora_b'].value: (18, 16, 2048)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum'].value: (18, 2, 1024, 4096)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_a'].value: (18, 2, 1024, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['gating_einsum_lora_b'].value: (18, 2, 32, 4096)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear'].value: (18, 4096, 1024)@bfloat16
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_a'].value: (18, 4096, 32)@float32
+['PaliGemma']['llm']['layers']['mlp_1']['linear_lora_b'].value: (18, 32, 1024)@float32
+['PaliGemma']['llm']['layers']['pre_attention_norm']['scale'].value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_attention_norm_1']['Dense_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm']['scale'].value: (18, 2048)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['bias'].value: (18, 3072)@bfloat16
+['PaliGemma']['llm']['layers']['pre_ffw_norm_1']['Dense_0']['kernel'].value: (18, 1024, 3072)@bfloat16
+['action_in_proj']['bias'].value: (1024,)@float32
+['action_in_proj']['kernel'].value: (32, 1024)@float32
+['action_out_proj']['bias'].value: (32,)@float32
+['action_out_proj']['kernel'].value: (1024, 32)@float32
+['time_mlp_in']['bias'].value: (1024,)@float32
+['time_mlp_in']['kernel'].value: (1024, 1024)@float32
+['time_mlp_out']['bias'].value: (1024,)@float32
+['time_mlp_out']['kernel'].value: (1024, 1024)@float32 (114578:train.py:247)
+  0%|                                                                                            | 0/20000 [00:00<?, ?it/s]
+DEBUG: Actions first 5 rows:
+[[[-0.06351035  0.1961647   0.03271271 ...  0.          0.
+    0.        ]
+  [-0.06351035  0.1999173   0.07529971 ...  0.          0.
+    0.        ]
+  [-0.06351035  0.2036699   0.12039211 ...  0.          0.
+    0.        ]
+  ...
+  [-0.43736023  0.7646835   0.8568983  ...  0.          0.
+    0.        ]
+  [-0.43736023  0.7646835   0.8568983  ...  0.          0.
+    0.        ]
+  [-0.43736023  0.7646835   0.8568983  ...  0.          0.
+    0.        ]]
+
+ [[-0.08914359  0.1905064  -0.06067874 ...  0.          0.
+    0.        ]
+  [-0.09193341  0.1905064  -0.06568899 ...  0.          0.
+    0.        ]
+  [-0.09193341  0.1905064  -0.07069924 ...  0.          0.
+    0.        ]
+  ...
+  [ 0.1201008  -0.31421804 -1.0026035  ...  0.          0.
+    0.        ]
+  [ 0.13126053 -0.32172328 -1.0226444  ...  0.          0.
+    0.        ]
+  [ 0.14520986 -0.32922804 -1.0552096  ...  0.          0.
+    0.        ]]
+
+ [[-0.07998849  0.19466889 -0.02952158 ...  0.          0.
+    0.        ]
+  [-0.07998849  0.20217381 -0.02451171 ...  0.          0.
+    0.        ]
+  [-0.07998849  0.20405026 -0.02451132 ...  0.          0.
+    0.        ]
+  ...
+  [ 0.2854908  -0.41512758 -0.32262075 ...  0.          0.
+    0.        ]
+  [ 0.2966513  -0.42450985 -0.32262054 ...  0.          0.
+    0.        ]
+  [ 0.31060097 -0.43201497 -0.32262054 ...  0.          0.
+    0.        ]]
+
+ [[-0.02013731  0.16731666 -0.04482722 ...  0.          0.
+    0.        ]
+  [-0.00339826  0.16731666 -0.04482722 ...  0.          0.
+    0.        ]
+  [ 0.00218215  0.16919275 -0.04482722 ...  0.          0.
+    0.        ]
+  ...
+  [-0.10104481  0.25362694 -0.17258807 ...  0.          0.
+    0.        ]
+  [-0.10941482  0.24424492 -0.17258826 ...  0.          0.
+    0.        ]
+  [-0.13173428  0.23298709 -0.17258826 ...  0.          0.
+    0.        ]]
+
+ [[-0.0588892   0.21287529  0.00719308 ...  0.          0.
+    0.        ]
+  [-0.056099    0.22976159  0.01971867 ...  0.          0.
+    0.        ]
+  [-0.04214993  0.24852479  0.02973912 ...  0.          0.
+    0.        ]
+  ...
+  [-0.35183096  0.42677316  0.38546604 ...  0.          0.
+    0.        ]
+  [-0.35183096  0.43615505  0.38546625 ...  0.          0.
+    0.        ]
+  [-0.35183096  0.4436602   0.37544632 ...  0.          0.
+    0.        ]]]
+Step 0: grad_norm=1.0531, loss=0.3145, param_norm=1803.8630
+DEBUG: Actions first 5 rows:
+[[[-0.07698029  0.1847311  -0.03950358 ...  0.          0.
+    0.        ]
+  [-0.07977049  0.18473138 -0.03950358 ...  0.          0.
+    0.        ]
+  [-0.07977049  0.18660739 -0.03950358 ...  0.          0.
+    0.        ]
+  ...
+  [-0.51220876  0.06840059 -0.6657833  ...  0.          0.
+    0.        ]
+  [-0.51220876  0.06840059 -0.6632782  ...  0.          0.
+    0.        ]
+  [-0.51220876  0.0702769  -0.658268   ...  0.          0.
+    0.        ]]
+
+ [[-0.07715636  0.1878968  -0.02952148 ...  0.          0.
+    0.        ]
+  [-0.0827362   0.18977296 -0.02701635 ...  0.          0.
+    0.        ]
+  [-0.08831607  0.1878968  -0.02701635 ...  0.          0.
+    0.        ]
+  ...
+  [-0.12458508  0.23105167 -0.13974673 ...  0.          0.
+    0.        ]
+  [-0.12458508  0.23105167 -0.13974673 ...  0.          0.
+    0.        ]
+  [-0.12458508  0.23105167 -0.13974673 ...  0.          0.
+    0.        ]]
+
+ [[-0.07785312  0.19648716 -0.02932651 ...  0.          0.
+    0.        ]
+  [-0.0778529   0.20774469 -0.02682119 ...  0.          0.
+    0.        ]
+  [-0.0778529   0.2171262  -0.02431606 ...  0.          0.
+    0.        ]
+  ...
+  [-0.05832338  0.20962143 -0.13955148 ...  0.          0.
+    0.        ]
+  [-0.06111331  0.20774513 -0.1420566  ...  0.          0.
+    0.        ]
+  [-0.06111331  0.20211622 -0.1420566  ...  0.          0.
+    0.        ]]
+
+ [[-0.04140871  0.1882491  -0.03750759 ...  0.          0.
+    0.        ]
+  [-0.04140871  0.19200148 -0.03500276 ...  0.          0.
+    0.        ]
+  [-0.04140871  0.1957543  -0.03249763 ...  0.          0.
+    0.        ]
+  ...
+  [-0.7360999   0.3327232   0.3307444  ...  0.          0.
+    0.        ]
+  [-0.7444694   0.36649638  0.34076488 ...  0.          0.
+    0.        ]
+  [-0.7472597   0.39839342  0.34577534 ...  0.          0.
+    0.        ]]
+
+ [[-0.05091289  0.17344438 -0.03555061 ...  0.          0.
+    0.        ]
+  [-0.05649275  0.17156808 -0.03304524 ...  0.          0.
+    0.        ]
+  [-0.05928296  0.16969177 -0.03054011 ...  0.          0.
+    0.        ]
+  ...
+  [-1.4793547   0.7776126   1.7981958  ...  0.          0.
+    0.        ]
+  [-1.4737747   0.7776126   1.825752   ...  0.          0.
+    0.        ]
+  [-1.4737747   0.7776126   1.8533082  ...  0.          0.
+    0.        ]]]
+DEBUG: Actions first 5 rows:
+[[[-0.09903822  0.2256874   0.06144489 ...  0.          0.
+    0.        ]
+  [-0.09903822  0.2538319   0.09651656 ...  0.          0.
+    0.        ]
+  [-0.09903822  0.28385174  0.12407216 ...  0.          0.
+    0.        ]
+  ...
+  [-0.0097606   0.17690364 -0.42705333 ...  0.          0.
+    0.        ]
+  [ 0.02092768  0.17502755 -0.4521037  ...  0.          0.
+    0.        ]
+  [ 0.04324714  0.17690364 -0.4796598  ...  0.          0.
+    0.        ]]
+
+ [[-0.07205482  0.19546065 -0.03660642 ...  0.          0.
+    0.        ]
+  [-0.07205482  0.19733681 -0.03660642 ...  0.          0.
+    0.        ]
+  [-0.07205482  0.19546065 -0.03660642 ...  0.          0.
+    0.        ]
+  ...
+  [-0.11111376  0.2423681  -0.0065452  ...  0.          0.
+    0.        ]
+  [-0.11111376  0.2423681   0.00347521 ...  0.          0.
+    0.        ]
+  [-0.11390369  0.24424441  0.01600113 ...  0.          0.
+    0.        ]]
+
+ [[-0.06725905  0.1850828  -0.03461052 ...  0.          0.
+    0.        ]
+  [-0.06725905  0.1850828  -0.03711536 ...  0.          0.
+    0.        ]
+  [-0.06725905  0.1850828  -0.03962049 ...  0.          0.
+    0.        ]
+  ...
+  [-0.24023464 -0.04007292 -0.74105453 ...  0.          0.
+    0.        ]
+  [-0.23465483 -0.04007314 -0.72101384 ...  0.          0.
+    0.        ]
+  [-0.22349538 -0.04007314 -0.68594295 ...  0.          0.
+    0.        ]]
+
+ [[-0.08033789  0.24990262 -0.03707618 ...  0.          0.
+    0.        ]
+  [-0.08033789  0.2667901  -0.03457125 ...  0.          0.
+    0.        ]
+  [-0.08033789  0.2874293  -0.03206612 ...  0.          0.
+    0.        ]
+  ...
+  [-0.07475802  0.5501109  -0.04960201 ...  0.          0.
+    0.        ]
+  [-0.06917827  0.55761635 -0.04960201 ...  0.          0.
+    0.        ]
+  [-0.06638834  0.5632453  -0.05711738 ...  0.          0.
+    0.        ]]
+
+ [[-0.043807    0.18660754 -0.03081319 ...  0.          0.
+    0.        ]
+  [-0.03822743  0.18660754 -0.03081319 ...  0.          0.
+    0.        ]
+  [-0.03543723  0.18473125 -0.03081319 ...  0.          0.
+    0.        ]
+  ...
+  [-0.28653044  0.31044334  0.3675007  ...  0.          0.
+    0.        ]
+  [-0.28653044  0.31231958  0.36499557 ...  0.          0.
+    0.        ]
+  [-0.2837405   0.31231958  0.36750045 ...  0.          0.
+    0.        ]]]
+Traceback (most recent call last):
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 289, in <module>
+    main(_config.cli())
+  File "/home/ps/VTLA/VTLA/scripts/train.py", line 279, in main
+    batch = next(data_iter)
+            ^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/training/data_loader.py", line 540, in __iter__
+    yield _model.Observation.from_dict(batch), batch["actions"]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/src/openpi/models/model.py", line 147, in from_dict
+    forces = log1p(forces) / np.log(1 + MAX_FORCE) * 2.0 - 1.0
+             ^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 441, in __array__
+    return np.asarray(self._value, dtype=dtype, **kwds)
+                      ^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/profiler.py", line 334, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ps/VTLA/VTLA/.venv/lib/python3.11/site-packages/jax/_src/array.py", line 640, in _value
+    npy_value, did_copy = self._single_device_array_to_np_array_did_copy()
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

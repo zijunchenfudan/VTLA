@@ -1,0 +1,13 @@
+{"time":"2026-02-13T23:42:10.369565524+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260213_234210-ur87l1gx/logs/debug-core.log"}
+{"time":"2026-02-13T23:42:11.912392389+08:00","level":"INFO","msg":"created new stream","id":"ur87l1gx"}
+{"time":"2026-02-13T23:42:11.912425751+08:00","level":"INFO","msg":"stream: started","id":"ur87l1gx"}
+{"time":"2026-02-13T23:42:11.912442713+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ur87l1gx"}
+{"time":"2026-02-13T23:42:11.912456699+08:00","level":"INFO","msg":"sender: started","stream_id":"ur87l1gx"}
+{"time":"2026-02-13T23:42:11.912485764+08:00","level":"INFO","msg":"handler: started","stream_id":"ur87l1gx"}
+{"time":"2026-02-13T23:42:12.540854024+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-13T23:42:48.428745978+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/ur87l1gx/file_stream\": EOF"}
+{"time":"2026-02-13T23:43:18.427823482+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/ur87l1gx/file_stream\": EOF"}
+{"time":"2026-02-13T23:43:35.606088058+08:00","level":"INFO","msg":"stream: closing","id":"ur87l1gx"}
+{"time":"2026-02-13T23:43:35.606132882+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-13T23:43:35.606199868+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-13T23:43:36.823203421+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}

@@ -1,0 +1,15 @@
+{"time":"2026-02-14T00:17:00.826941568+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260214_001700-z2j25fia/logs/debug-core.log"}
+{"time":"2026-02-14T00:17:02.618985771+08:00","level":"INFO","msg":"created new stream","id":"z2j25fia"}
+{"time":"2026-02-14T00:17:02.619017661+08:00","level":"INFO","msg":"stream: started","id":"z2j25fia"}
+{"time":"2026-02-14T00:17:02.619041275+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"z2j25fia"}
+{"time":"2026-02-14T00:17:02.619056203+08:00","level":"INFO","msg":"sender: started","stream_id":"z2j25fia"}
+{"time":"2026-02-14T00:17:02.619083024+08:00","level":"INFO","msg":"handler: started","stream_id":"z2j25fia"}
+{"time":"2026-02-14T00:17:03.318861549+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-14T00:19:02.390049732+08:00","level":"INFO","msg":"stream: closing","id":"z2j25fia"}
+{"time":"2026-02-14T00:19:02.390070791+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-14T00:19:02.390108412+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-14T00:19:03.60521831+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-14T00:19:05.632004137+08:00","level":"INFO","msg":"handler: closed","stream_id":"z2j25fia"}
+{"time":"2026-02-14T00:19:05.632027851+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"z2j25fia"}
+{"time":"2026-02-14T00:19:05.632051105+08:00","level":"INFO","msg":"sender: closed","stream_id":"z2j25fia"}
+{"time":"2026-02-14T00:19:05.632107921+08:00","level":"INFO","msg":"stream: closed","id":"z2j25fia"}

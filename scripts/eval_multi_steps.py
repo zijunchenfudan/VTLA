@@ -19,7 +19,7 @@ from openpi.policies import policy_config
 
 # 模型配置
 CONFIG_KEY = "pi05_lora_tactile"
-CHECKPOINT_DIR = "/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/prompt_tactile/19999"
+CHECKPOINT_DIR = "/home/ps/VTLA/VTLA/checkpoints/pi05_lora_tactile/ACTION_EXPERT_INPUT/19999"
 
 # 数据集配置
 DATASET_ROOT = "/home/ps/dataset/VTLA/Pick_and_Place_two_Tennis_Balls"
@@ -216,7 +216,7 @@ def evaluate_episode(policy, parquet_path, dataset_root, output_dir):
             example = {
                 "images": current_images,
                 "state": state,
-                "tactile": np.zeros((5, 13), dtype=np.int32),
+                "tactile": tactile,
                 "prompt": "Pick and place two green tennis balls into the bowl",
             }
             

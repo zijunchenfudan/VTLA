@@ -1,0 +1,15 @@
+{"time":"2026-02-13T19:59:51.186207838+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260213_195951-fc2593yt/logs/debug-core.log"}
+{"time":"2026-02-13T19:59:52.930256322+08:00","level":"INFO","msg":"created new stream","id":"fc2593yt"}
+{"time":"2026-02-13T19:59:52.930279596+08:00","level":"INFO","msg":"stream: started","id":"fc2593yt"}
+{"time":"2026-02-13T19:59:52.930298352+08:00","level":"INFO","msg":"sender: started","stream_id":"fc2593yt"}
+{"time":"2026-02-13T19:59:52.930296869+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"fc2593yt"}
+{"time":"2026-02-13T19:59:52.930318821+08:00","level":"INFO","msg":"handler: started","stream_id":"fc2593yt"}
+{"time":"2026-02-13T19:59:54.246878915+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-13T20:01:06.299412886+08:00","level":"INFO","msg":"stream: closing","id":"fc2593yt"}
+{"time":"2026-02-13T20:01:06.299499951+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-13T20:01:06.305097595+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-13T20:01:07.404370344+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-13T20:01:09.418200582+08:00","level":"INFO","msg":"handler: closed","stream_id":"fc2593yt"}
+{"time":"2026-02-13T20:01:09.418246309+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fc2593yt"}
+{"time":"2026-02-13T20:01:09.418255606+08:00","level":"INFO","msg":"sender: closed","stream_id":"fc2593yt"}
+{"time":"2026-02-13T20:01:09.418307465+08:00","level":"INFO","msg":"stream: closed","id":"fc2593yt"}

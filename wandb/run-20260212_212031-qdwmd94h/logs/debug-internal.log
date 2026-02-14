@@ -1,0 +1,17 @@
+{"time":"2026-02-12T21:20:31.584959453+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260212_212031-qdwmd94h/logs/debug-core.log"}
+{"time":"2026-02-12T21:20:37.25009207+08:00","level":"INFO","msg":"created new stream","id":"qdwmd94h"}
+{"time":"2026-02-12T21:20:37.250120423+08:00","level":"INFO","msg":"stream: started","id":"qdwmd94h"}
+{"time":"2026-02-12T21:20:37.250130082+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"qdwmd94h"}
+{"time":"2026-02-12T21:20:37.250143627+08:00","level":"INFO","msg":"sender: started","stream_id":"qdwmd94h"}
+{"time":"2026-02-12T21:20:37.250170528+08:00","level":"INFO","msg":"handler: started","stream_id":"qdwmd94h"}
+{"time":"2026-02-12T21:20:37.728350446+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-12T21:21:24.189337608+08:00","level":"INFO","msg":"stream: closing","id":"qdwmd94h"}
+{"time":"2026-02-12T21:21:24.189396549+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-12T21:21:24.18944511+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-12T21:21:25.586817684+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-12T21:21:30.403306064+08:00","level":"ERROR","msg":"HTTP error","status":404,"method":"POST","url":"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/qdwmd94h/file_stream"}
+{"time":"2026-02-12T21:21:30.40335204+08:00","level":"ERROR+4","msg":"filestream: fatal error: filestream: failed to upload: 404 Not Found path=files/zijunchenfudan-fudan-university/openpi/qdwmd94h/file_stream: {\"error\":\"run openpi/qdwmd94h not found while streaming file\"}"}
+{"time":"2026-02-12T21:21:30.409780491+08:00","level":"INFO","msg":"handler: closed","stream_id":"qdwmd94h"}
+{"time":"2026-02-12T21:21:30.409794537+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"qdwmd94h"}
+{"time":"2026-02-12T21:21:30.409810287+08:00","level":"INFO","msg":"sender: closed","stream_id":"qdwmd94h"}
+{"time":"2026-02-12T21:21:30.409878686+08:00","level":"INFO","msg":"stream: closed","id":"qdwmd94h"}

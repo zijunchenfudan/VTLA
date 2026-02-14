@@ -1,0 +1,39 @@
+{"time":"2026-02-13T01:45:36.039031283+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260213_014536-svuchizo/logs/debug-core.log"}
+{"time":"2026-02-13T01:45:38.003438305+08:00","level":"INFO","msg":"created new stream","id":"svuchizo"}
+{"time":"2026-02-13T01:45:38.003459375+08:00","level":"INFO","msg":"stream: started","id":"svuchizo"}
+{"time":"2026-02-13T01:45:38.003473191+08:00","level":"INFO","msg":"sender: started","stream_id":"svuchizo"}
+{"time":"2026-02-13T01:45:38.003476798+08:00","level":"INFO","msg":"handler: started","stream_id":"svuchizo"}
+{"time":"2026-02-13T01:45:38.003517735+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"svuchizo"}
+{"time":"2026-02-13T01:45:38.538254294+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-13T03:00:44.332817449+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T03:00:59.332921722+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T03:09:59.332743887+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T03:18:44.333417554+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T09:25:14.333459735+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T09:34:53.760678786+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2026-02-13T10:00:31.650955555+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:00:38.807153853+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:00:48.51934198+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:00:53.770767987+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2026-02-13T10:01:02.232698193+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:22:13.542943861+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:52:43.54322158+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:58:28.543110187+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:58:45.126990614+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T10:59:13.542658938+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T12:04:28.554647323+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T12:47:13.554394798+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T12:48:43.554792726+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T13:14:58.554042358+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T13:36:28.55508648+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T13:40:43.55433313+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T13:41:13.554272811+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T13:45:43.554567667+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/zijunchenfudan-fudan-university/openpi/svuchizo/file_stream\": EOF"}
+{"time":"2026-02-13T14:05:24.908374995+08:00","level":"INFO","msg":"stream: closing","id":"svuchizo"}
+{"time":"2026-02-13T14:05:24.90855829+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-13T14:05:24.908981467+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-13T14:05:29.094571451+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-13T14:05:31.494258999+08:00","level":"INFO","msg":"handler: closed","stream_id":"svuchizo"}
+{"time":"2026-02-13T14:05:31.494304194+08:00","level":"INFO","msg":"sender: closed","stream_id":"svuchizo"}
+{"time":"2026-02-13T14:05:31.49430204+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"svuchizo"}
+{"time":"2026-02-13T14:05:31.494403191+08:00","level":"INFO","msg":"stream: closed","id":"svuchizo"}

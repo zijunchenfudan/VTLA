@@ -110,9 +110,6 @@ class Pi0(_model.BaseModel):
             self.tactile_dim = 12
             self.tactile_in_proj = nnx.Linear(self.tactile_dim, action_expert_config.width, rngs=rngs)
             # self.tactile_out_proj = nnx.Linear(action_expert_config.width, self.tactile_dim, rngs=rngs)
-        # elif self.tactile_mode == TactileMode.VLM_ACTION_INPUT:
-        #     self.tactile_dim = 12
-        #     as
 
 
         # This attribute gets automatically set by model.train() and model.eval().
@@ -150,6 +147,7 @@ class Pi0(_model.BaseModel):
 
         # 假设 obs 中有名为 tactile 的数据
         if self.tactile_mode == TactileMode.VLM_INPUT and hasattr(obs, 'tactile') and obs.tactile is not None:
+            # jax.debug.print("✅ Tactile branch executed! Shape: {}", obs.tactile.shape)
             # nnx.Linear 会自动作用在最后一个维度上
             # 输入 (B, 5, 13) -> 输出 (B, 5, Embed_Dim)
             tactile_tokens = self.tactile_proj(obs.tactile)
@@ -254,6 +252,25 @@ class Pi0(_model.BaseModel):
             [prefix_tokens, suffix_tokens], mask=attn_mask, positions=positions, adarms_cond=[None, adarms_cond]
         )
         v_t = self.action_out_proj(suffix_out[:, -self.action_horizon :])
+
+        if self.tactile_mode == TactileMode.ACTION_TACTILE:
+            squared_error = jnp.square(v_t - u_t)
+            # 触觉信号loss
+            tactile_start = 8
+            tactile_end = 13
+            gt_proximity = actions[..., tactile_start:tactile_end]
+            CONTACT_THRESHOLD = -0.90
+            contact = 5.0
+            no_contact = 0.1
+            is_contact = gt_proximity > CONTACT_THRESHOLD
+            proximity_weight = jnp.where(is_contact, contact, no_contact)
+            robot_dim = tactile_start
+            robot_weight = jnp.ones(actions.shape[:-1] + (robot_dim,))
+            padding_dim = actions.shape[-1] - tactile_end
+            padding_weight = jnp.zeros(actions.shape[:-1] + (padding_dim,))
+            loss_weight = jnp.concatenate([robot_weight, proximity_weight, padding_weight], axis=-1)
+            
+            return jnp.mean(squared_error * loss_weight, axis=-1)
 
         return jnp.mean(jnp.square(v_t - u_t), axis=-1)
 

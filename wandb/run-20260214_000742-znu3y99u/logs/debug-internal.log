@@ -1,0 +1,15 @@
+{"time":"2026-02-14T00:07:42.999703365+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/ps/VTLA/VTLA/wandb/run-20260214_000742-znu3y99u/logs/debug-core.log"}
+{"time":"2026-02-14T00:07:44.520404853+08:00","level":"INFO","msg":"created new stream","id":"znu3y99u"}
+{"time":"2026-02-14T00:07:44.520431433+08:00","level":"INFO","msg":"stream: started","id":"znu3y99u"}
+{"time":"2026-02-14T00:07:44.520446762+08:00","level":"INFO","msg":"handler: started","stream_id":"znu3y99u"}
+{"time":"2026-02-14T00:07:44.520451671+08:00","level":"INFO","msg":"sender: started","stream_id":"znu3y99u"}
+{"time":"2026-02-14T00:07:44.520473041+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"znu3y99u"}
+{"time":"2026-02-14T00:07:45.439356552+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2026-02-14T00:09:10.50617971+08:00","level":"INFO","msg":"stream: closing","id":"znu3y99u"}
+{"time":"2026-02-14T00:09:10.506199397+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2026-02-14T00:09:10.506232418+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2026-02-14T00:09:11.587105449+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-14T00:09:13.559613469+08:00","level":"INFO","msg":"handler: closed","stream_id":"znu3y99u"}
+{"time":"2026-02-14T00:09:13.559642604+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"znu3y99u"}
+{"time":"2026-02-14T00:09:13.559653855+08:00","level":"INFO","msg":"sender: closed","stream_id":"znu3y99u"}
+{"time":"2026-02-14T00:09:13.559716722+08:00","level":"INFO","msg":"stream: closed","id":"znu3y99u"}

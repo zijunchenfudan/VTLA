@@ -998,13 +998,13 @@ _CONFIGS = [
     # ============================================= Single-Task Lora =============================================
     TrainConfig(
         name="pi05_lora_tactile",
-        model=pi0_config.Pi0Config(tactile_mode=TactileMode.NONE, max_token_len=512, pi05=True, paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"),
+        model=pi0_config.Pi0Config(tactile_mode=TactileMode.ACTION_TACTILE, max_token_len=512, pi05=True, paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"),
         data=LeRobotTactileDataConfig(
-            repo_id="VTLA/Pick_and_Place_two_Tennis_Balls",
-            assets=AssetsConfig(
-                assets_dir="gs://openpi-assets/checkpoints/pi05_base/assets",
-                asset_id="trossen",
-            ),
+            repo_id="VTLA/Tactile2Action",
+            # assets=AssetsConfig(
+            #     assets_dir="gs://openpi-assets/checkpoints/pi05_base/assets",
+            #     asset_id="trossen",
+            # ),
             default_prompt="Pick and place two green tennis balls into the bowl",
             repack_transforms=_transforms.Group(
                 inputs=[
